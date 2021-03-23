@@ -17,3 +17,11 @@ article {
 section {
   background-color: lightgreen;
 }
+
+table {
+  background-color: wheat;
+}
+
+caption {
+  caption-side: bottom;
+}
