@@ -5,3 +5,11 @@ header {
 nav {
   background-color: lightblue;
 }
+
+main {
+  background-color: lightgray;
+}
+
+article {
+  background-color: lightyellow
+}
