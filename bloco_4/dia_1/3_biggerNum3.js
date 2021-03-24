@@ -30,5 +30,5 @@ if (typeNum1 == 'number' && typeNum2 == 'number' && typeNum3 == 'number') {
   }
 
 } else {
-  console.log("ERROR: Invalid input!");
+  console.log('ERROR: Invalid input!');
 }

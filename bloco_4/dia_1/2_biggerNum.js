@@ -20,5 +20,5 @@ if (typeof num1 == 'number' && typeof num2 == 'number') {
   }
 
 } else {
-  console.log("ERROR: Invalid input!");
+  console.log('ERROR: Invalid input!');
 }
