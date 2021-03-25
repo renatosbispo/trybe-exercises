@@ -1,6 +1,6 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let numbersSize = numbers.length;
-let indexA, indexB;
+let indexA, indexB, num1, num2;
 
 for (indexA = 1; indexA < numbersSize - 1; indexA += 1) {
   for (indexB = 0; indexB < numbersSize - indexA; indexB += 1) {
