@@ -9,7 +9,7 @@
 // b = 2*l - 1
 // l = (b + 1) / 2
 // -----------
-let n = 9;
+let n = 7;
 let index1;
 let index2;
 let line = '';
@@ -17,12 +17,12 @@ let line = '';
 if (n % 2 == 0) {
   console.log('Choose an odd number for the base of the pyramid.');
 } else {
-  for (index1 = 1; index1 <= (n + 1) / 2; index1 += 1) {
+  for (index1 = 0; index1 < (n + 1) / 2; index1 += 1) {
     let spaces = ''; 
-    for (index2 = n - index1; index2 > (n - 1) / 2; index2 -= 1) {
+    for (index2 = index1; index2 < (n - 1) / 2; index2 += 1) {
       spaces += ' ';
     }
-    if (index1 == 1) {
+    if (index1 == 0) {
       line += '*'
     } else {
       line += '**';
