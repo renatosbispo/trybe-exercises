@@ -19,6 +19,7 @@ if (grossSalary <= 1556.94) {
   maxInssRate = true;
 }
 
+// Salary after INSS calculation
 if (maxInssRate) {
   salaryAfterInss = grossSalary - MAX_INSS_RATE;
 } else {
@@ -43,7 +44,9 @@ if (salaryAfterInss <= 1903.98) {
   irDeduction = 869.36;
 }
 
+// Net salary calculation
 netSalary = salaryAfterInss - (salaryAfterInss * irRate - irDeduction);
+// Round to 2 decimal places
 netSalary = Math.round(netSalary * 100) / 100;
 
-console.log(netSalary);
+console.log('Net salary =', netSalary);
