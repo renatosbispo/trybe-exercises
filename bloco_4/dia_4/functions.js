@@ -90,6 +90,7 @@ function getMostFrequentNumber(numbers) {
   return getBiggestNumberIndex(numberFrequencies);
 }
 
+// Exercise 6
 function getSummation(n) {
   let summation = 0;
 
@@ -100,9 +101,23 @@ function getSummation(n) {
   return summation;
 }
 
-console.log('isPalindrome:', isPalindrome('madam'));
-console.log('getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
-console.log('getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
-console.log('getBiggestName:', getBiggestName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
-console.log('getMostFrequentNumber:', getMostFrequentNumber([2, 3, 2, 5, 8, 2, 3]));
-console.log('getSummation:', getSummation(5));
+// Exercise 7
+function isEndingOf(word, ending) {
+  let answer = true;
+  
+  for (let endingIndex = ending.length - 1, wordIndex = word.length - 1; endingIndex >= 0 && answer; endingIndex -= 1, wordIndex -= 1) {
+    if (ending[endingIndex] != word[wordIndex]) {
+      answer = false;
+    }
+  }
+
+  return answer;
+}
+
+console.log('1. isPalindrome:', isPalindrome('madam'));
+console.log('2. getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
+console.log('3. getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
+console.log('4. getBiggestName:', getBiggestName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+console.log('5. getMostFrequentNumber:', getMostFrequentNumber([2, 3, 2, 5, 8, 2, 3]));
+console.log('6. getSummation:', getSummation(5));
+console.log('7. isEndingOf:', isEndingOf('trybe', 'be'));
