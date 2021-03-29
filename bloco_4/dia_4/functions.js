@@ -77,6 +77,22 @@ function getBiggestName(names) {
   return biggestName;
 }
 
+// Exercise 5
+function mostFrequentNumberIn(numbers) {
+  let numberFrequencies = [];
+  let mostFrequentNumber;
+
+  for (let number of numbers) {
+    if(!numberFrequencies[number]) {
+      numberFrequencies[number] = 1;
+    } else {
+      numberFrequencies[number] += 1;
+    }
+  }
+
+  return biggestNumberIndex(numberFrequencies);
+}
+
 console.log('isPalindrome:', isPalindrome('madam'));
 console.log('getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
 console.log('getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
