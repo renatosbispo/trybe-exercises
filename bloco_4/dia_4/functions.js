@@ -59,6 +59,25 @@ function smallestNumberIndex(numbers) {
   return smallestNumberIndex;
 }
 
+// Exercise 4
+function biggestNameIn(names) {
+  let biggestName;
+  
+  if (names.length == 0) {
+    biggestName = null;
+  } else {
+    biggestName = names[0];
+    for (let name of names) {
+      if (name.length > biggestName.length) {
+        biggestName = name;
+      }
+    }
+  }
+
+  return biggestName;
+}
+
 console.log('isPalindrome:', isPalindrome('madam'));
 console.log('biggestNumberIndex:', biggestNumberIndex([2, 3, 6, 7, 10, 1]));
 console.log('smallestNumberIndex:', smallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
+console.log('biggestNameIn:', biggestNameIn(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
