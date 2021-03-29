@@ -19,16 +19,16 @@ function isPalindrome(word) {
 function getBiggestNumberIndex(numbers) {
   let biggestNumber;
   let biggestNumberIndex;
-  
+
   if (numbers.length == 0) {
     biggestNumberIndex = null;
   } else {
     for (var index = 0; !numbers[index]; index += 1) ;
     biggestNumber = numbers[index];
     biggestNumberIndex = index;
-    for (let index2 in numbers) {
-      if (numbers[index2] > biggestNumber) {
-        biggestNumberIndex = index2;
+    for (let number of numbers) {
+      if (numbers[numbers.indexOf(number)] > biggestNumber) {
+        biggestNumberIndex = numbers.indexOf(number);
       }
     }
   }
@@ -40,16 +40,16 @@ function getBiggestNumberIndex(numbers) {
 function getSmallestNumberIndex(numbers) {
   let smallestNumber;
   let smallestNumberIndex;
-  
+
   if (numbers.length == 0) {
     smallestNumberIndex = null;
   } else {
     for (var index = 0; !numbers[index]; index += 1) ;
     smallestNumber = numbers[index];
     smallestNumberIndex = index;
-    for (let index2 in numbers) {
-      if (numbers[index2] < smallestNumber) {
-        smallestNumberIndex = index2;
+    for (let number of numbers) {
+      if (numbers[numbers.indexOf(number)] < smallestNumber) {
+        smallestNumberIndex = numbers.indexOf(number);
       }
     }
   }
@@ -94,4 +94,4 @@ console.log('isPalindrome:', isPalindrome('madam'));
 console.log('getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
 console.log('getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
 console.log('getBiggestName:', getBiggestName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
-console.log('getMostFrequentNumber:', getMostFrequentNumber([2, 3, 2, 5, 3, 8, 3, 2, 3]));
+console.log('getMostFrequentNumber:', getMostFrequentNumber([2, 3, 2, 5, 8, 2, 3]));
