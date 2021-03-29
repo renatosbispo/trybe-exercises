@@ -37,28 +37,6 @@ function biggestNumberIndex(numbers) {
   return biggestNumberIndex;
 }
 
-// Exercise 2
-function biggestNumberIndex(numbers) {
-  let biggestNumber;
-  let biggestNumberIndex;
-  
-  if (numbers.length == 0) {
-    biggestNumberIndex = null;
-  } else {
-    biggestNumber = numbers[0];
-    biggestNumberIndex = 0;
-    if (numbers.length > 1) {
-      for (let index = 1; index < numbers.length; index += 1) {
-        if (numbers[index] > biggestNumber) {
-          biggestNumberIndex = index;
-        }
-      }
-    }
-  }
-
-  return biggestNumberIndex;
-}
-
 // Exercise 3
 function smallestNumberIndex(numbers) {
   let smallestNumber;
