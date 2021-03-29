@@ -16,7 +16,7 @@ function isPalindrome(word) {
 }
 
 // Exercise 2
-function biggestNumberIndex(numbers) {
+function getBiggestNumberIndex(numbers) {
   let biggestNumber;
   let biggestNumberIndex;
   
@@ -38,7 +38,7 @@ function biggestNumberIndex(numbers) {
 }
 
 // Exercise 3
-function smallestNumberIndex(numbers) {
+function getSmallestNumberIndex(numbers) {
   let smallestNumber;
   let smallestNumberIndex;
   
@@ -60,7 +60,7 @@ function smallestNumberIndex(numbers) {
 }
 
 // Exercise 4
-function biggestNameIn(names) {
+function getBiggestName(names) {
   let biggestName;
   
   if (names.length == 0) {
@@ -78,6 +78,6 @@ function biggestNameIn(names) {
 }
 
 console.log('isPalindrome:', isPalindrome('madam'));
-console.log('biggestNumberIndex:', biggestNumberIndex([2, 3, 6, 7, 10, 1]));
-console.log('smallestNumberIndex:', smallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
-console.log('biggestNameIn:', biggestNameIn(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
+console.log('getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
+console.log('getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
+console.log('getBiggestName:', getBiggestName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
