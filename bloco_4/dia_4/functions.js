@@ -90,8 +90,19 @@ function getMostFrequentNumber(numbers) {
   return getBiggestNumberIndex(numberFrequencies);
 }
 
+function getSummation(n) {
+  let summation = 0;
+
+  for (let index = 1; index <= n; index += 1) {
+    summation += index; 
+  }
+
+  return summation;
+}
+
 console.log('isPalindrome:', isPalindrome('madam'));
 console.log('getBiggestNumberIndex:', getBiggestNumberIndex([2, 3, 6, 7, 10, 1]));
 console.log('getSmallestNumberIndex:', getSmallestNumberIndex([2, 4, 6, 7, 10, 0, -3]));
 console.log('getBiggestName:', getBiggestName(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
 console.log('getMostFrequentNumber:', getMostFrequentNumber([2, 3, 2, 5, 8, 2, 3]));
+console.log('getSummation:', getSummation(5));
