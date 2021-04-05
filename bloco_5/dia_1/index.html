@@ -44,7 +44,8 @@
       - document.getElementById()
       - document.getElementsByClassName()
       - document.getElementsByTagName()
-      Crie uma função que exiba o conteúdo de todas as tags <p> no console.*/
+      */
+
       /*Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)*/
       function changeText() {
         let paragraph = document.querySelectorAll('.center-content p')[1];
@@ -70,11 +71,19 @@
           paragraph.style.textTransform = 'uppercase';
         }
       }
+      /* Crie uma função que exiba o conteúdo de todas as tags <p> no console. */
+      function printParagraphs() {
+        let paragraphs = document.getElementsByTagName('p');
+        for (let paragraph of paragraphs) {
+          console.log(paragraph.innerText);
+        }
+      }
       changeText();
       changeMainContentBgColor();
       changeCenterContentBgColor();
       fixText();
       textToUpperCase();
+      printParagraphs();
       </script>
   </body>
   </html>
