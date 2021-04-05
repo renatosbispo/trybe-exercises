@@ -4,34 +4,31 @@ function styleElements(elementsToBeStyled, propertyName, propertyValue) {
   }
 }
 
-function styleTaskBoxesBackgroundColor(className, backgroundColor) {
-  let taskSection = document.querySelector(`.${className}`);
-  let taskBoxes = taskSection.getElementsByTagName('div');
+function styleSectionElements(sectionSelector, element, propertyName, propertyValue) {
+  let elementsToBeStyled;
 
-  styleElements(taskBoxes, 'backgroundColor', backgroundColor);
-}
+  if (element === null) {
+    elementsToBeStyled = document.querySelectorAll(`${sectionSelector}`);
+  } else {
+    elementsToBeStyled = document.querySelectorAll(`${sectionSelector} ${element}`);
+  }
 
-function styleTaskHeadersBackgroundColor(className, backgroundColor) {
-  let taskSection = document.querySelector(`.${className}`);
-  let taskHeaders = taskSection.getElementsByTagName('h3');
-
-  styleElements(taskHeaders, 'backgroundColor', backgroundColor);
+  styleElements(elementsToBeStyled, propertyName, propertyValue);
 }
 
 // Change the background color of the header container.
-let header = document.getElementById('header-container');
-header.style.backgroundColor = '#00B069';
+styleSectionElements('#header-container', null, 'backgroundColor', 'rgb(0, 176, 105)');
 
 
 // Change the background color of the urgent tasks boxes and headers.
-styleTaskBoxesBackgroundColor('emergency-tasks', '#FF9F84');
-styleTaskHeadersBackgroundColor('emergency-tasks', '#A500F3');
+styleSectionElements('.emergency-tasks', 'div', 'backgroundColor', 'rgb(255, 159, 132)');
+styleSectionElements('.emergency-tasks', 'h3', 'backgroundColor', 'rgb(165, 0, 243)');
 
 
 // Change the background color of the non-urgent tasks boxes and headers.
-styleTaskBoxesBackgroundColor('no-emergency-tasks', '#F9DB5E');
-styleTaskHeadersBackgroundColor('no-emergency-tasks', 'black');
+styleSectionElements('.no-emergency-tasks', 'div', 'backgroundColor', 'rgb(249, 219, 94)');
+styleSectionElements('.no-emergency-tasks', 'h3', 'backgroundColor', 'black');
+
 
 // Change the background color of the footer container.
-let footer = document.getElementById('footer-container');
-footer.style.backgroundColor = '#003533';
+styleSectionElements('#footer-container', null, 'backgroundColor', 'rgb(0, 53, 51)');
