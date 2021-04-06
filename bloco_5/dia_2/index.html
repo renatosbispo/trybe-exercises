@@ -57,44 +57,44 @@
   </head>
   <body>
     <script>
-      // 1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body
+      // 1. Adicione a tag h1 com o texto Exercício 5.2 - JavaScript DOM como filho da tag body.
       let pageTitle = document.createElement('h1');
       pageTitle.innerText = 'Exercício 5.2 - JavaScript DOM';
       pageTitle.id = 'page-title';
       document.body.prepend(pageTitle);
 
-      // 2. Adicione a tag div com a classe main-content como filho da tag body
+      // 2. Adicione a tag div com a classe main-content como filho da tag body.
       let mainContent = document.createElement('div');
       mainContent.className = 'main-content';
       document.getElementById('page-title').insertAdjacentElement('afterend', mainContent);
 
-      // 3. Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
+      // 3. Adicione a tag div com a classe center-content como filho da tag div criada no passo 2.
       let centerContent = document.createElement('div');
       centerContent.className  = 'center-content';
       document.querySelector('.main-content').appendChild(centerContent);
 
-      // 4. Adicione a tag p como filho do div criado no passo 3 e coloque algum texto
+      // 4. Adicione a tag p como filho do div criado no passo 3 e coloque algum texto.
       let paragraph = document.createElement('p');
       paragraph.innerText = 'Na quinta parte da aula sobre JavaScript , você aprenderá a adicionar e remover tags de uma página. Além disso, aprenderá mais uma forma de buscar os elementos da página.';
       document.querySelector('.center-content').appendChild(paragraph);
 
-      // 5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
+      // 5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2.
       let leftContent = document.createElement('div');
       leftContent.className = 'left-content';
       document.querySelector('.main-content').prepend(leftContent);
 
-      // 6. Adicione a tag div com a classe right-content como filho da tag div criada no passo 2
+      // 6. Adicione a tag div com a classe right-content como filho da tag div criada no passo 2.
       let rightContent = document.createElement('div');
       rightContent.className = 'right-content';
       document.querySelector('.main-content').appendChild(rightContent);
 
-      // 7. Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
+      // 7. Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5.
       let leftContentImg = document.createElement('img');
       leftContentImg.src = 'https://picsum.photos/200';
       leftContentImg.className = 'small-image';
       document.querySelector('.left-content').appendChild(leftContentImg);
 
-      // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6
+      // 8. Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6.
       let numbersNames = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
       let rightContentList = document.createElement('ul');
       let listItem;
@@ -105,6 +105,13 @@
         rightContentList.appendChild(listItem);
       }
       document.querySelector('.right-content').appendChild(rightContentList);
+
+      // 9. Adicione 3 tags h3 , todas sendo filhas do div criado no passo 2.
+      let subTitle;
+      for (let index of Array(3).keys()) {
+        subTitle = document.createElement('h3');
+        document.getElementById('page-title').insertAdjacentElement('afterend', subTitle);
+      }
     </script>
   </body>
 </html>
