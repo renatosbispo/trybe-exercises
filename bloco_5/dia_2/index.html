@@ -66,6 +66,10 @@
       let mainContent = document.createElement('div');
       mainContent.className = 'main-content';
       document.getElementById('page-title').insertAdjacentElement('afterend', mainContent);
+      // 3. Adicione a tag div com a classe center-content como filho da tag div criada no passo 2
+      let centerContent = document.createElement('div');
+      centerContent.className  = 'center-content';
+      document.querySelector('.main-content').appendChild(centerContent);
     </script>
   </body>
 </html>
