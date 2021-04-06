@@ -120,6 +120,11 @@
       for (tag of document.querySelectorAll('.main-content h3')) {
         tag.classList.add('description');
       }
+
+      // 12. Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild()
+      leftContent = document.querySelector('.left-content');
+      document.querySelector('.main-content').removeChild(leftContent);
+
     </script>
   </body>
 </html>
