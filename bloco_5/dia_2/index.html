@@ -88,6 +88,11 @@
       rightContent.className = 'right-content';
       document.querySelector('.main-content').appendChild(rightContent);
 
+      // 7. Adicione uma imagem com src configurado para o valor https://picsum.photos/200 e classe small-image . Esse elemento deve ser filho do div criado no passo 5
+      let leftContentImg = document.createElement('img');
+      leftContentImg.src = 'https://picsum.photos/200';
+      leftContentImg.className = 'small-image';
+      document.querySelector('.left-content').appendChild(leftContentImg);
     </script>
   </body>
 </html>
