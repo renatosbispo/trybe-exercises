@@ -98,7 +98,7 @@
       let numbersNames = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
       let rightContentList = document.createElement('ul');
       let listItem;
-      
+
       for (numberName of numbersNames) {
         listItem = document.createElement('li');
         listItem.innerText = numberName;
@@ -112,6 +112,9 @@
         subTitle = document.createElement('h3');
         document.getElementById('page-title').insertAdjacentElement('afterend', subTitle);
       }
+
+      // 10. Adicione a classe title na tag h1 criada.
+      document.getElementById('page-title').classList.add('title');
     </script>
   </body>
 </html>
