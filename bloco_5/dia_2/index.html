@@ -77,6 +77,11 @@
       let paragraph = document.createElement('p');
       paragraph.innerText = 'Na quinta parte da aula sobre JavaScript , você aprenderá a adicionar e remover tags de uma página. Além disso, aprenderá mais uma forma de buscar os elementos da página.';
       document.querySelector('.center-content').appendChild(paragraph);
+
+      // 5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2
+      let leftContent = document.createElement('div');
+      leftContent.className = 'left-content';
+      document.querySelector('.main-content').prepend(leftContent);
     </script>
   </body>
 </html>
