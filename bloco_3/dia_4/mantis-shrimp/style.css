@@ -1,0 +1,27 @@
+header {
+  background-color: lightcoral;
+}
+
+nav {
+  background-color: lightblue;
+}
+
+main {
+  background-color: lightgray;
+}
+
+article {
+  background-color: lightyellow
+}
+
+section {
+  background-color: lightgreen;
+}
+
+table {
+  background-color: wheat;
+}
+
+caption {
+  caption-side: bottom;
+}
