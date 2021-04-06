@@ -110,11 +110,16 @@
       let subTitle;
       for (let index of Array(3).keys()) {
         subTitle = document.createElement('h3');
-        document.getElementById('page-title').insertAdjacentElement('afterend', subTitle);
+        document.querySelector('.main-content').prepend(subTitle);
       }
 
       // 10. Adicione a classe title na tag h1 criada.
       document.getElementById('page-title').classList.add('title');
+
+      // 11. Adicione a classe description nas 3 tags h3 criadas.
+      for (tag of document.querySelectorAll('.main-content h3')) {
+        tag.classList.add('description');
+      }
     </script>
   </body>
 </html>
