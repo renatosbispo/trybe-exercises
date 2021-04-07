@@ -4,27 +4,37 @@ const divTres = document.getElementById('divTres');
 const input = document.getElementById('input');
 const myWebpage = document.getElementById('mySpotrybefy');
 
-/*Crie uma função que adicione a classe 'tech' ao elemento selecionado;
+/*Crie uma função que adicione a classe 'tech' ao elemento selecionado.
 1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso? */
 function toggleTechClass(event) {
   let element = event.target;
+  let element2 = document.querySelector('.tech');
 
-  if (event.type === 'mouseover') {
+  if (element2) {
+    element2.classList.remove('tech');
+  }
+
+  if (element !== element2) {
     element.classList.add('tech');
-  } else if (event.type === 'mouseleave') {
-    element.classList.remove('tech');
   }
 }
 let boxes = document.querySelector('.container').children;
 
 for (let box of boxes) {
-  box.addEventListener('mouseover', toggleTechClass);
-  box.addEventListener('mouseleave', toggleTechClass);
+  box.addEventListener('click', toggleTechClass);
 }
+
+/* Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+com a classe 'tech'. */
+function changeTechText(event) {
+  let techElement = document.querySelector('.tech');
+
+  techElement.innerText = event.target.value;
+}
+
+document.getElementById('input').addEventListener('keyup', changeTechText);
+
 /*
- Copie esse arquivo e edite apenas ele;
-  Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
-com a classe 'tech'; 
  Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 redirecione para alguma página;
 1. Que tal redirecionar para seu portifólio?
