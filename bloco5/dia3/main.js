@@ -17,8 +17,8 @@ function getRandomInt(min, max) {
 }
 
 /*
- * Crie uma função que adicione a classe 'tech' ao elemento selecionado.
- * 1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
+ * 1. Crie uma função que adicione a classe 'tech' ao elemento selecionado.
+ * 1.1. Deve existir apenas um elemento com a classe 'tech'. Como você faz isso?
  */
 function toggleTechClass(event) {
   let element = event.target;
@@ -39,7 +39,7 @@ for (let box of boxes) {
 }
 
 /*
- * Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
+ * 2. Crie uma função que, ao digitar na caixa de texto, altere o texto do elemento
  * com a classe 'tech'.
  */
 function changeTechText(event) {
@@ -51,15 +51,15 @@ function changeTechText(event) {
 document.getElementById('input').addEventListener('keyup', changeTechText);
 
 /*
- * Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy',
+ * 3. Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy',
  * ele redirecione para alguma página.
- * 1. Que tal redirecionar para seu portifólio?
+ * 3.1. Que tal redirecionar para seu portifólio?
  */
 let top3 = document.getElementById('mySpotrybefy');
 top3.addEventListener('dblclick', () => window.open('https://renatosbispo.github.io', '_blank'));
 
 /*
- * Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
+ * 4. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
  * a cor do mesmo;
  */
 top3.addEventListener('mouseover', event => event.target.style.color = `rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)})`);
