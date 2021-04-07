@@ -34,10 +34,12 @@ function changeTechText(event) {
 
 document.getElementById('input').addEventListener('keyup', changeTechText);
 
-/*
- Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
+/*  Crie uma função que, ao clicar duas vezes em 'Meu top 3 do Spotrybefy', ele
 redirecione para alguma página;
-1. Que tal redirecionar para seu portifólio?
+1. Que tal redirecionar para seu portifólio? */
+document.getElementById('mySpotrybefy').addEventListener('dblclick', () => window.open('https://renatosbispo.github.io', '_blank'));
+
+/*
  Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
 a cor do mesmo;
 
