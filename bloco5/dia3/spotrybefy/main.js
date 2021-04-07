@@ -62,7 +62,7 @@ top3.addEventListener('dblclick', () => window.open('https://renatosbispo.github
  * 4. Crie uma função que, ao passar o mouse sobre 'Meu top 3 do Spotrybefy', altere
  * a cor do mesmo;
  */
-top3.addEventListener('mouseover', event => event.target.style.color = `rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)})`);
+top3.addEventListener('mouseenter', event => event.target.style.color = `rgb(${getRandomInt(0, 255)}, ${getRandomInt(0, 255)}, ${getRandomInt(0, 255)})`);
 top3.addEventListener('mouseleave', event => event.target.style.color = null);
 
 // Segue abaixo um exemplo do uso de event.target:
