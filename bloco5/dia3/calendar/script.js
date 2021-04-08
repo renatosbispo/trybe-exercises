@@ -18,10 +18,10 @@ function createDaysOfTheMonth() {
   const dezDaysList = [28, 29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
   let daysList = document.getElementById('days');
   let daysListItem;
+  let daySpan;
 
   for (let day of dezDaysList) {
     daysListItem = document.createElement('li');
-    daysListItem.innerText = day;
     daysListItem.classList.add('day');
 
     if (day === 24 || day === 25 || day === 31) {
@@ -32,6 +32,10 @@ function createDaysOfTheMonth() {
       daysListItem.classList.add('friday');
     }
 
+    daySpan = document.createElement('span');
+    daySpan.classList.add('day-span');
+    daySpan.innerText = day;
+    daysListItem.appendChild(daySpan);
     daysList.appendChild(daysListItem);
   }
 }
@@ -103,11 +107,11 @@ function addFridayButtonFunctionality() {
   let fridayButton = document.getElementById('btn-friday');
 
   fridayButton.addEventListener('click', () => {
-    let fridays = document.getElementsByClassName('friday');
+    let fridays = document.querySelectorAll('.friday .day-span');
     let fridaysMonthDays = [];
 
     for (let friday of fridays) {
-      fridaysMonthDays.push(parseInt(friday.previousSibling.innerText) + 1);
+      fridaysMonthDays.push(parseInt(friday.parentNode.previousSibling.innerText) + 1);
     }
 
     if (fridays[0].innerText !== '🎉') {
@@ -121,3 +125,19 @@ function addFridayButtonFunctionality() {
 addFridayButtonFunctionality();
 
 // Exercise 6
+function zoomInDay() {
+  let daysOfTheMonth = document.querySelectorAll('.day-span');
+
+  for (let day of daysOfTheMonth) {
+    day.addEventListener('mouseenter', () => {
+      day.style.fontSize = '1.4em';
+      day.style.lineHeight = '0';
+    });
+    day.addEventListener('mouseleave', () => {
+      day.style.fontSize = null;
+      day.style.lineHeight = null;
+    });
+  }
+}
+
+zoomInDay();
