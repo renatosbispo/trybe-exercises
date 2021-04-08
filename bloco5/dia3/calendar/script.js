@@ -151,3 +151,15 @@ function addTask(task) {
 }
 
 addTask('Ligar pra Sun');
+
+// Exercise 8
+function addColorLegend(color) {
+  let colorLegend = document.createElement('div');
+
+  colorLegend.classList.add('task');
+  colorLegend.style.backgroundColor = color;
+
+  document.querySelector('.my-tasks').appendChild(colorLegend);
+}
+
+addColorLegend('red');
