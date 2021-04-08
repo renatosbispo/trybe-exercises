@@ -74,3 +74,14 @@ function addHolidayButtonFunctionality() {
 }
 
 addHolidayButtonFunctionality();
+
+// Exercise 4
+function createFridayButton(buttonText) {
+  let fridayButton = document.createElement('button');
+
+  fridayButton.id = 'btn-friday';
+  fridayButton.innerText = buttonText;
+  document.querySelector('.buttons-container').appendChild(fridayButton);
+}
+
+createFridayButton('Sexta-feira');
