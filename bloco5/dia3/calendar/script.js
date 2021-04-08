@@ -85,3 +85,39 @@ function createFridayButton(buttonText) {
 }
 
 createFridayButton('Sexta-feira');
+
+// Exercise 5
+function  setElementsInnerTextWithString(elements, innerText) {
+  for (let index = 0; index < elements.length; index += 1) {
+    elements[index].innerText = innerText;
+  }
+}
+
+function  setElementsInnerTextWithArray(elements, innerTexts) {
+  for (let index = 0; index < elements.length; index += 1) {
+    elements[index].innerText = innerTexts[index];
+  }
+}
+
+function addFridayButtonFunctionality() {
+  let fridayButton = document.getElementById('btn-friday');
+
+  fridayButton.addEventListener('click', () => {
+    let fridays = document.getElementsByClassName('friday');
+    let fridaysMonthDays = [];
+
+    for (let friday of fridays) {
+      fridaysMonthDays.push(parseInt(friday.previousSibling.innerText) + 1);
+    }
+
+    if (fridays[0].innerText !== '🎉') {
+      setElementsInnerTextWithString(fridays, '🎉');
+    } else {
+      setElementsInnerTextWithArray(fridays, fridaysMonthDays);
+    }
+  });
+}
+
+addFridayButtonFunctionality();
+
+// Exercise 6
