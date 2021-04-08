@@ -163,3 +163,20 @@ function addColorLegend(color) {
 }
 
 addColorLegend('red');
+
+// Exercise 9
+function addTaskSelection() {
+  let taskLegends = document.querySelectorAll('.task');
+
+  for (let taskLegend of taskLegends) {
+    taskLegend.addEventListener('click', e => {
+      if (e.target.className.includes('selected')) {
+        e.target.classList.remove('selected');
+      } else {
+        e.target.classList.add('selected');
+      }
+    });
+  }
+}
+
+addTaskSelection();
