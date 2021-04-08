@@ -36,6 +36,7 @@ button {
   vertical-align: middle;
   padding: 15px;
   width: calc(13.6% - 30px);
+  line-height: 1;
 }
 
 .input-container {

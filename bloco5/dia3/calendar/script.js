@@ -134,10 +134,20 @@ function zoomInDay() {
       day.style.lineHeight = '0';
     });
     day.addEventListener('mouseleave', () => {
-      day.style.fontSize = null;
-      day.style.lineHeight = null;
+      day.style.fontSize = '1em';
+      day.style.lineHeight = '1';
     });
   }
 }
 
 zoomInDay();
+
+// Exercise 7
+function addTask(task) {
+  let taskElement = document.createElement('span');
+
+  taskElement.innerText = task;
+  document.querySelector('.my-tasks').appendChild(taskElement);
+}
+
+addTask('Ligar pra Sun');
