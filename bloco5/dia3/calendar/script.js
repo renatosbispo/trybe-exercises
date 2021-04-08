@@ -39,11 +39,38 @@ function createDaysOfTheMonth() {
 createDaysOfTheMonth();
 
 // Exercise 2
-function createHolidayButton(holiday) {
+function createHolidayButton(buttonText) {
   let holidayButton = document.createElement('button');
 
-  holidayButton.innerText = holiday;
+  holidayButton.innerText = buttonText;
   holidayButton.id = 'btn-holiday';
   document.querySelector('.buttons-container').appendChild(holidayButton);
 }
 
+createHolidayButton('Feriados');
+
+// Exercise 3
+function setElementsStyle(elements, property, value) {
+  for (let element of elements) {
+    element.style[property] = value;
+  }
+}
+
+function addHolidayButtonFunctionality() {
+  let holidayButton = document.querySelector('#btn-holiday');
+
+  holidayButton.addEventListener('click', () => {
+    let holidays = document.getElementsByClassName('holiday');
+    let holidaysCurrentColor = holidays[0].style.color;
+
+    if (holidaysCurrentColor === 'white') {
+      setElementsStyle(holidays, 'color', 'rgb(102, 102, 102');
+      setElementsStyle(holidays, 'backgroundColor', 'rgb(238,238,238)');
+    } else {
+      setElementsStyle(holidays, 'color', 'white');
+      setElementsStyle(holidays, 'backgroundColor', 'rgb(217, 86, 63)');
+    }
+  });
+}
+
+addHolidayButtonFunctionality();
