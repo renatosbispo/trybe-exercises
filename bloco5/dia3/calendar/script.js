@@ -67,12 +67,12 @@ function addHolidayButtonFunctionality() {
     let holidays = document.getElementsByClassName('holiday');
     let holidaysCurrentColor = holidays[0].style.color;
 
-    if (holidaysCurrentColor === 'white') {
-      setElementsStyle(holidays, 'color', 'rgb(102, 102, 102');
-      setElementsStyle(holidays, 'backgroundColor', 'rgb(238,238,238)');
-    } else {
+    if (holidaysCurrentColor !== 'white') {
       setElementsStyle(holidays, 'color', 'white');
       setElementsStyle(holidays, 'backgroundColor', 'rgb(217, 86, 63)');
+    } else {
+      setElementsStyle(holidays, 'color', 'rgb(102, 102, 102');
+      setElementsStyle(holidays, 'backgroundColor', 'rgb(238,238,238)');
     }
   });
 }
@@ -180,3 +180,31 @@ function addTaskSelection() {
 }
 
 addTaskSelection();
+
+// Exercise 10
+function assignTaskToDay() {
+  let daysOfTheMonth = document.getElementsByClassName('day');
+
+  for (let day of daysOfTheMonth) {
+    day.addEventListener('click', e => {
+      let selectedTaskColor = document.querySelector('.selected.task').style.backgroundColor;
+      let targetElement;
+      let targetElementColor;
+      console.log(e.target.tagName);
+      if (e.target.tagName === 'SPAN') {
+        targetElement = e.target.parentNode;
+      } else {
+        targetElement = e.target;
+      }
+      targetElementColor = targetElement.style.color;
+
+      if (targetElementColor === selectedTaskColor) {
+        targetElement.style.color = 'rgb(119,119,119)';
+      } else {
+        targetElement.style.color = selectedTaskColor;
+      }
+    });
+  }
+}
+
+assignTaskToDay();
