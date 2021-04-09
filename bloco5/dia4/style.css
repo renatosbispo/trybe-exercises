@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: rgb(163, 190, 140);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.site-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2% 5%;
+}
+
+.header-container,
+.footer-container {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  color: rgb(236, 239, 244);
+  background-color: rgb(46, 52, 64);
+}
+
+.header-container .page-title {
+  margin: 0;
+}
+
+.footer-container a {
+  font-weight: bold;
+}
