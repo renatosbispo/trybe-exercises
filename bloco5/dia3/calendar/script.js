@@ -208,3 +208,32 @@ function assignTaskToDay() {
 }
 
 assignTaskToDay();
+
+// Bonus
+function addAppointment(e) {
+  if (e.type === 'keydown' && e.key !== 'Enter') {
+    return;
+  }
+
+  let userInput = document.getElementById('task-input').value;
+  let appointmentListItem = document.createElement('li');
+  let appointmentsList = document.getElementById('appointments');
+
+  if (userInput === '') {
+    alert('ERRO: Insira um compromisso antes de clicar em "Adicionar"!');
+  } else {
+    appointmentListItem.innerText = userInput;
+    appointmentsList.appendChild(appointmentListItem);
+  }
+}
+
+function addAppointmentListeners() {
+  let addAppointmentButton = document.getElementById('btn-add');
+  let appointmentInputBox = document.getElementById('task-input');
+
+  addAppointmentButton.addEventListener('click', addAppointment);
+  appointmentInputBox.addEventListener('keydown', addAppointment);
+
+}
+
+addAppointmentListeners();

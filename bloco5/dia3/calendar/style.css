@@ -157,6 +157,19 @@ label {
   padding: 10px 0;
 }
 
+#appointments {
+  list-style: none;
+  padding-left: 0;
+}
+
+#appointments li {
+  color: #666;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+  vertical-align: middle;
+}
 /* #days .holiday {
   color: white;
   background-color: rgb(217, 86, 63);
