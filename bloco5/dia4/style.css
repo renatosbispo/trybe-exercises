@@ -15,7 +15,7 @@ a:hover {
 .site-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2% 5%;
+  padding: 5% 5%;
 }
 
 .header-container,
@@ -24,7 +24,7 @@ a:hover {
   padding: 10px 0;
   text-align: center;
   color: rgb(236, 239, 244);
-  background-color: rgb(46, 52, 64);
+  background-color: rgb(59, 66, 82);
 }
 
 .header-container .page-title {
@@ -33,4 +33,36 @@ a:hover {
 
 .footer-container a {
   font-weight: bold;
+}
+
+.section-title {
+  font-size: 1.3em;
+}
+
+.preferences-container {
+  text-align: center;
+  padding: 10px;
+  padding-left: 12px;
+  color: rgb(59, 66, 82);
+  background-color: rgb(216, 222, 233);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.preferences-container .section-title {
+  margin: 0;
+}
+
+.preferences {
+  list-style: none;
+  padding: 0;
+}
+
+.preferences li {
+  display: inline-block;
+  color: rgb(59, 66, 82);
+}
+
+.preferences li:not(:last-child) {
+  margin-right:15px;
 }
