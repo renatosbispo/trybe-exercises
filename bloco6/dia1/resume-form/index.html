@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Currículo</title>
+</head>
+<body>
+  <header>
+    <h1>Currículo</h1>
+  </header>
+  <form>
+    <fieldset>
+      <legend>Dados pessoais:</legend>
+      <!-- Name field -->
+      <label for="name">Nome:</label>
+      <input type="text" name="name" id="name" maxlength="40" required>
+      <!-- E-mail field -->
+      <label for="e-mail">E-mail:</label>
+      <input type="email" name="e-mail" id="e-mail" maxlength="50" required>
+      <!-- CPF field -->
+      <label for="cpf">CPF:</label>
+      <input type="text" name="cpf" id="cpf" maxlength="14" required>
+      <!-- Addres field -->
+      <label for="address">Endereço:</label>
+      <input type="text" name="address" id="address" maxlength="200" required>
+      <!-- City field -->
+      <label for="city">Cidade:</label>
+      <input type="text" name="city" id="city" maxlength="28" required>
+      <!-- State field -->
+      <label for="state-selection">Estado:</label>
+      <select name="state" id="state-selection" required>
+        <option value="">--Selecione uma opção--</option>
+        <!-- Options filled via JavaScript -->
+      </select>
+      <!-- Address type field -->
+      <fieldset id="address-type">
+        <legend>Tipo:</legend>
+        <input type="radio" name="address-type" id="house" value="house">
+        <label for="house">Casa</label>
+        <input type="radio" name="address-type" id="apartment" value="apartment">
+        <label for="apartment">Apartamento</label>
+      </fieldset>
+    </fieldset>
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+form input , form select {
+  display: block;
+}
+
+form input , form select {
+  margin-bottom: 0.5rem;
+}
+
+#address-type {
+  margin: 0.5rem 0;
+}
+
+#address-type input {
+  display: inline;
+}
