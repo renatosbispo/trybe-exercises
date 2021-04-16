@@ -12,7 +12,7 @@
     <h1>Currículo</h1>
   </header>
   <form id="resume-form">
-    <fieldset>
+    <fieldset id="personal-data">
       <legend>Dados Pessoais</legend>
       <!-- Name field -->
       <label for="name">Nome:</label>
@@ -44,7 +44,7 @@
         <label for="apartment">Apartamento</label>
       </div>
     </fieldset>
-    <fieldset>
+    <fieldset id="last-job">
       <legend>Última Experiência</legend>
       <!-- Summary field -->
       <label for="resume-summary">Resumo:</label>
@@ -62,6 +62,7 @@
         ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
       </div>
     </fieldset>
+    <button type="reset" id="clear-all">Limpar tudo</button>
     <button type="submit">Enviar</button>
   </form>
   <script src="script.js"></script>

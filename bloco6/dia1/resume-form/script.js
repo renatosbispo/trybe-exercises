@@ -1,6 +1,7 @@
 const resumeForm = document.getElementById('resume-form');
 const startDateField = document.getElementById('start-date');
 const errorBox = document.querySelector('.error-box');
+const lastJobFieldSet = document.getElementById('last-job');
 
 function markRequiredFieldLabels() {
   const inputLabels = document.getElementsByTagName('label');
@@ -177,20 +178,9 @@ function isValidDate(date) {
   return true;
 }
 
-function formSubmitHandler(event) {
-  const data = new FormData(resumeForm);
+function createSubmittedDataBox(data) {
   const submittedDataBox = document.createElement('div');
   const dataBoxHeading = document.createElement('h2');
-
-  if (!isValidDate(data.get('start-date'))) {
-    errorBox.style.display = 'block';
-    errorBox.addEventListener('click', (event) => {
-      event.target.style.display = 'none';
-    });
-    event.preventDefault();
-
-    return;
-  }
 
   submittedDataBox.id = 'submitted-form-data';
   dataBoxHeading.innerText = 'Dados Enviados';
@@ -207,10 +197,36 @@ function formSubmitHandler(event) {
     submittedDataBox.appendChild(entryParagraph);
   }
   resumeForm.insertAdjacentElement('afterend', submittedDataBox);
-  errorBox.style.display = 'none';
   // The folowing line was taken from:
   // https://stackoverflow.com/questions/270612/scroll-to-bottom-of-div#comment117187453_26293764
-  submittedDataBox.scrollIntoView({ behavior: "smooth", block: "end" });
+  document.body.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function showErrorBox() {
+  errorBox.style.display = 'block';
+  errorBox.addEventListener('click', () => {
+    errorBox.style.display = 'none';
+  });
+  lastJobFieldSet.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function formSubmitHandler(event) {
+  const data = new FormData(resumeForm);
+  const currentSubmittedDataBox = document.getElementById('submitted-form-data');
+
+  if (!isValidDate(data.get('start-date'))) {
+    showErrorBox();
+    event.preventDefault();
+
+    return;
+  }
+
+  if (currentSubmittedDataBox) {
+    currentSubmittedDataBox.remove();
+  }
+
+  createSubmittedDataBox(data);
+  errorBox.style.display = 'none';
   event.preventDefault();
 }
 
@@ -256,11 +272,21 @@ function formatCpf(event) {
 
 window.onload = () => {
   const cpfField = document.getElementById('cpf');
+  const clearAllButton = document.getElementById('clear-all');
 
   errorBox.style.display = 'none';
   cpfField.addEventListener('input', formatCpf);
   startDateField.addEventListener('input', formatStartDate);
   resumeForm.addEventListener('submit', formSubmitHandler);
+  clearAllButton.addEventListener('click', () => {
+    const currentSubmittedDataBox = document.getElementById('submitted-form-data');
+
+    if (currentSubmittedDataBox) {
+      currentSubmittedDataBox.remove();
+    }
+
+    document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   addStateSelectOptions();
   markRequiredFieldLabels();
 };
