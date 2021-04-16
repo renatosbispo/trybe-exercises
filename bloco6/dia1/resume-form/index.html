@@ -19,7 +19,10 @@
       <input type="text" name="name" id="name" maxlength="40" required>
       <!-- E-mail field -->
       <label for="e-mail">E-mail:</label>
-      <input type="email" name="e-mail" id="e-mail" maxlength="50" required>
+      <input type="text" name="e-mail" id="e-mail" maxlength="50" required>
+      <div class="email-error-box error-box">
+        ERRO: insira um email válido, começando por letras ou números, seguido de @ e de um domínio válido! Clique nesta caixa para esconder este aviso.
+      </div>
       <!-- CPF field -->
       <label for="cpf">CPF:</label>
       <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="on" required>
@@ -58,7 +61,7 @@
       <!-- Start date field -->
       <label for="start-date">Data de início:</label>
       <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" required>
-      <div class="error-box">
+      <div class="data-error-box error-box">
         ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
       </div>
     </fieldset>

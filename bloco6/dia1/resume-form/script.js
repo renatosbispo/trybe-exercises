@@ -1,6 +1,7 @@
 const resumeForm = document.getElementById('resume-form');
 const startDateField = document.getElementById('start-date');
-const errorBox = document.querySelector('.error-box');
+const dataErrorBox = document.querySelector('.data-error-box');
+const emailErrorBox = document.querySelector('.email-error-box');
 const lastJobFieldSet = document.getElementById('last-job');
 
 function markRequiredFieldLabels() {
@@ -161,23 +162,6 @@ function getNumbersFromString(initialString) {
   return numbersOnlyString;
 }
 
-function isValidDate(date) {
-  let [day, month, year] = date.split('/');
-  day = parseInt(day);
-  month = parseInt(month);
-  year = parseInt(year);
-
-  if (day < 1 || month < 1 || year < 0) {
-    return false;
-  }
-
-  if (day > 31 || month > 12) {
-    return false;
-  }
-
-  return true;
-}
-
 function createSubmittedDataBox(data) {
   const submittedDataBox = document.createElement('div');
   const dataBoxHeading = document.createElement('h2');
@@ -202,12 +186,47 @@ function createSubmittedDataBox(data) {
   document.body.scrollIntoView({ behavior: 'smooth', block: 'end' });
 }
 
-function showErrorBox() {
-  errorBox.style.display = 'block';
-  errorBox.addEventListener('click', () => {
-    errorBox.style.display = 'none';
+function isValidEmail(email) {
+  const emailRegex = /^\w*(\.\w+){0,}@\w+\.\w{2,}/
+
+  if (emailRegex.test(email)) {
+    return true;
+  }
+
+  return false;
+}
+
+function showEmailErrorBox() {
+  emailErrorBox.style.display = 'block';
+  emailErrorBox.addEventListener('click', () => {
+    emailErrorBox.style.display = 'none';
+  });
+  document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showDataErrorBox() {
+  dataErrorBox.style.display = 'block';
+  dataErrorBox.addEventListener('click', () => {
+    dataErrorBox.style.display = 'none';
   });
   lastJobFieldSet.scrollIntoView({ behavior: 'smooth', block: 'end' });
+}
+
+function isValidDate(date) {
+  let [day, month, year] = date.split('/');
+  day = parseInt(day);
+  month = parseInt(month);
+  year = parseInt(year);
+
+  if (day < 1 || month < 1 || year < 0) {
+    return false;
+  }
+
+  if (day > 31 || month > 12) {
+    return false;
+  }
+
+  return true;
 }
 
 function formSubmitHandler(event) {
@@ -215,18 +234,29 @@ function formSubmitHandler(event) {
   const currentSubmittedDataBox = document.getElementById('submitted-form-data');
 
   if (!isValidDate(data.get('start-date'))) {
-    showErrorBox();
+    showDataErrorBox();
+    emailErrorBox.style.display = 'none';
     event.preventDefault();
 
     return;
   }
 
+  if(!isValidEmail(data.get('e-mail'))) {
+    showEmailErrorBox();
+    dataErrorBox.style.display = 'none';
+    event.preventDefault();
+
+    return;
+  }
+
+
+
   if (currentSubmittedDataBox) {
     currentSubmittedDataBox.remove();
   }
-
+  emailErrorBox.style.display = 'none';
+  dataErrorBox.style.display = 'none';
   createSubmittedDataBox(data);
-  errorBox.style.display = 'none';
   event.preventDefault();
 }
 
@@ -274,7 +304,8 @@ window.onload = () => {
   const cpfField = document.getElementById('cpf');
   const clearAllButton = document.getElementById('clear-all');
 
-  errorBox.style.display = 'none';
+  dataErrorBox.style.display = 'none';
+  emailErrorBox.style.display = 'none';
   cpfField.addEventListener('input', formatCpf);
   startDateField.addEventListener('input', formatStartDate);
   resumeForm.addEventListener('submit', formSubmitHandler);
@@ -284,6 +315,9 @@ window.onload = () => {
     if (currentSubmittedDataBox) {
       currentSubmittedDataBox.remove();
     }
+
+    dataErrorBox.style.display = 'none';
+    emailErrorBox.style.display = 'none';
 
     document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
