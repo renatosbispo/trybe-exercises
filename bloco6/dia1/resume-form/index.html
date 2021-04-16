@@ -11,7 +11,7 @@
   <header>
     <h1>Currículo</h1>
   </header>
-  <form>
+  <form id="resume-form">
     <fieldset>
       <legend>Dados Pessoais</legend>
       <!-- Name field -->
@@ -22,7 +22,7 @@
       <input type="email" name="e-mail" id="e-mail" maxlength="50" required>
       <!-- CPF field -->
       <label for="cpf">CPF:</label>
-      <input type="text" name="cpf" id="cpf" maxlength="14" required>
+      <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="on" required>
       <!-- Addres field -->
       <label for="address">Endereço:</label>
       <input type="text" name="address" id="address" maxlength="200" required>
@@ -57,8 +57,12 @@
       <input type="text" name="job-description" id="job-description" required>
       <!-- Start date field -->
       <label for="start-date">Data de início:</label>
-      <input type="text" name="start-date" id="start-date" maxlength="10" required>
+      <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" required>
+      <div class="error-box">
+        ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
+      </div>
     </fieldset>
+    <button type="submit">Enviar</button>
   </form>
   <script src="script.js"></script>
 </body>

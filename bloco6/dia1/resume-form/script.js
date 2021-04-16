@@ -1,3 +1,7 @@
+const resumeForm = document.getElementById('resume-form');
+const startDateField = document.getElementById('start-date');
+const errorBox = document.querySelector('.error-box');
+
 function markRequiredFieldLabels() {
   const inputLabels = document.getElementsByTagName('label');
 
@@ -156,6 +160,60 @@ function getNumbersFromString(initialString) {
   return numbersOnlyString;
 }
 
+function isValidDate(date) {
+  let [day, month, year] = date.split('/');
+  day = parseInt(day);
+  month = parseInt(month);
+  year = parseInt(year);
+
+  if (day < 1 || month < 1 || year < 0) {
+    return false;
+  }
+
+  if (day > 31 || month > 12) {
+    return false;
+  }
+
+  return true;
+}
+
+function formSubmitHandler(event) {
+  const data = new FormData(resumeForm);
+  const submittedDataBox = document.createElement('div');
+  const dataBoxHeading = document.createElement('h2');
+
+  if (!isValidDate(data.get('start-date'))) {
+    errorBox.style.display = 'block';
+    errorBox.addEventListener('click', (event) => {
+      event.target.style.display = 'none';
+    });
+    event.preventDefault();
+
+    return;
+  }
+
+  submittedDataBox.id = 'submitted-form-data';
+  dataBoxHeading.innerText = 'Dados Enviados';
+  dataBoxHeading.classList.add('section-heading');
+  submittedDataBox.appendChild(dataBoxHeading);
+  for (let [key, value] of data) {
+    if (key === 'cpf') {
+      value = value.replaceAll('.', '').replace('-', '');
+    }
+    const entryParagraph = document.createElement('p');
+
+    entryParagraph.classList.add('entry-paragraph');
+    entryParagraph.innerHTML = `<span class='entry-name'>${key}: </span>${value}`;
+    submittedDataBox.appendChild(entryParagraph);
+  }
+  resumeForm.insertAdjacentElement('afterend', submittedDataBox);
+  errorBox.style.display = 'none';
+  // The folowing line was taken from:
+  // https://stackoverflow.com/questions/270612/scroll-to-bottom-of-div#comment117187453_26293764
+  submittedDataBox.scrollIntoView({ behavior: "smooth", block: "end" });
+  event.preventDefault();
+}
+
 function formatStartDate(event) {
   let currentValue = event.target.value;
   const currentValueNumbersOnly = getNumbersFromString(currentValue);
@@ -198,10 +256,11 @@ function formatCpf(event) {
 
 window.onload = () => {
   const cpfField = document.getElementById('cpf');
-  const stardDateField = document.getElementById('start-date');
 
+  errorBox.style.display = 'none';
   cpfField.addEventListener('input', formatCpf);
-  stardDateField.addEventListener('input', formatStartDate);
+  startDateField.addEventListener('input', formatStartDate);
+  resumeForm.addEventListener('submit', formSubmitHandler);
   addStateSelectOptions();
   markRequiredFieldLabels();
 };
