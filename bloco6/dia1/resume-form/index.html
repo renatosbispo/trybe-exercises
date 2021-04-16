@@ -13,7 +13,7 @@
   </header>
   <form>
     <fieldset>
-      <legend>Dados pessoais:</legend>
+      <legend>Dados Pessoais</legend>
       <!-- Name field -->
       <label for="name">Nome:</label>
       <input type="text" name="name" id="name" maxlength="40" required>
@@ -36,13 +36,28 @@
         <!-- Options filled via JavaScript -->
       </select>
       <!-- Address type field -->
-      <fieldset id="address-type">
-        <legend>Tipo:</legend>
-        <input type="radio" name="address-type" id="house" value="house">
+      <div id="address-type">
+        <p>Tipo:<span class="required-marker">*</span></p>
+        <input type="radio" name="address-type" id="house" value="house" required>
         <label for="house">Casa</label>
         <input type="radio" name="address-type" id="apartment" value="apartment">
         <label for="apartment">Apartamento</label>
-      </fieldset>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Última Experiência</legend>
+      <!-- Summary field -->
+      <label for="resume-summary">Resumo:</label>
+      <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" required></textarea>
+      <!-- Job title field -->
+      <label for="job-title">Cargo:</label>
+      <input type="text" name="job-title" id="job-title" maxlength="40" required>
+      <!-- Job description field -->
+      <label for="job-description">Descrição do cargo:</label>
+      <input type="text" name="job-description" id="job-description" required>
+      <!-- Start date field -->
+      <label for="start-date">Data de início:</label>
+      <input type="text" name="start-date" id="start-date" maxlength="10" required>
     </fieldset>
   </form>
   <script src="script.js"></script>

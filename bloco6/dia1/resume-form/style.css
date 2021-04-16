@@ -1,15 +1,28 @@
-form input , form select {
+form fieldset {
+  margin-bottom: 1rem;
+}
+
+form input , form select, form textarea {
   display: block;
 }
 
-form input , form select {
+form input , form select , form textarea {
   margin-bottom: 0.5rem;
 }
 
-#address-type {
-  margin: 0.5rem 0;
+form label {
+  display: inline-block;
+  margin-bottom: 0.2rem;
 }
 
-#address-type input {
+#address-type input , #address-type p {
   display: inline;
+}
+
+textarea {
+  resize: none;
+}
+
+.required-marker {
+  color: red;
 }

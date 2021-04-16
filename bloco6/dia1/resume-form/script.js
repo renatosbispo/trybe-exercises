@@ -1,3 +1,16 @@
+function markRequiredFieldLabels() {
+  const inputLabels = document.getElementsByTagName('label');
+
+  for (let index = 0; index < inputLabels.length; index += 1) {
+    const inputId = inputLabels[index].htmlFor;
+    const inputField = document.getElementById(inputId);
+
+    if (inputField.type !== 'radio' && inputField.required) {
+      inputLabels[index].innerHTML += "<span class='required-marker'>*</span>";
+    }
+  }
+}
+
 function addStateSelectOptions() {
   const states = [
     {
@@ -143,6 +156,25 @@ function getNumbersFromString(initialString) {
   return numbersOnlyString;
 }
 
+function formatStartDate(event) {
+  let currentValue = event.target.value;
+  const currentValueNumbersOnly = getNumbersFromString(currentValue);
+
+  if (event.inputType !== 'insertText') {
+    return;
+  }
+
+  if (!isNumber(event.data)) {
+    currentValue = currentValue.substring(0, currentValue.lastIndexOf(event.data));
+    event.target.value = currentValue;
+    return;
+  }
+
+  if (currentValueNumbersOnly.length === 2 || currentValueNumbersOnly.length === 4) {
+    event.target.value += '/';
+  }
+}
+
 function formatCpf(event) {
   let currentValue = event.target.value;
   const currentValueNumbersOnly = getNumbersFromString(currentValue);
@@ -166,7 +198,10 @@ function formatCpf(event) {
 
 window.onload = () => {
   const cpfField = document.getElementById('cpf');
+  const stardDateField = document.getElementById('start-date');
 
   cpfField.addEventListener('input', formatCpf);
+  stardDateField.addEventListener('input', formatStartDate);
   addStateSelectOptions();
+  markRequiredFieldLabels();
 };
