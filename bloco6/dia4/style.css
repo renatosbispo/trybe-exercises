@@ -80,7 +80,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px;
-  flex-basis: 350px;
+  flex: 1 350px;
+  justify-content: center;
 }
 
 .aside-container h3, h4 {
