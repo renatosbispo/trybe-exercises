@@ -18,124 +18,43 @@ function markRequiredFieldLabels() {
 }
 
 function addStateSelectOptions() {
-  const states = [
-    {
-        "name": "Acre",
-        "initials": "ac"
-    },
-    {
-        "name": "Alagoas",
-        "initials": "al"
-    },
-    {
-        "name": "Amapá",
-        "initials": "ap"
-    },
-    {
-        "name": "Amazonas",
-        "initials": "am"
-    },
-    {
-        "name": "Bahia",
-        "initials": "ba"
-    },
-    {
-        "name": "Ceará",
-        "initials": "ce"
-    },
-    {
-        "name": "Espírito Santo",
-        "initials": "es"
-    },
-    {
-        "name": "Goiás",
-        "initials": "go"
-    },
-    {
-        "name": "Maranhão",
-        "initials": "ma"
-    },
-    {
-        "name": "Mato Grosso",
-        "initials": "mt"
-    },
-    {
-        "name": "Mato Grosso do Sul",
-        "initials": "ms"
-    },
-    {
-        "name": "Minas Gerais",
-        "initials": "mg"
-    },
-    {
-        "name": "Pará",
-        "initials": "pa"
-    },
-    {
-        "name": "Paraíba",
-        "initials": "pb"
-    },
-    {
-        "name": "Paraná",
-        "initials": "pr"
-    },
-    {
-        "name": "Pernambuco",
-        "initials": "pe"
-    },
-    {
-        "name": "Piauí",
-        "initials": "pi"
-    },
-    {
-        "name": "Rio de Janeiro",
-        "initials": "rj"
-    },
-    {
-        "name": "Rio Grande do Norte",
-        "initials": "rn"
-    },
-    {
-        "name": "Rio Grande do Sul",
-        "initials": "rs"
-    },
-    {
-        "name": "Rondônia",
-        "initials": "ro"
-    },
-    {
-        "name": "Roraima",
-        "initials": "rr"
-    },
-    {
-        "name": "Santa Catarina",
-        "initials": "sc"
-    },
-    {
-        "name": "São Paulo",
-        "initials": "sp"
-    },
-    {
-        "name": "Sergipe",
-        "initials": "se"
-    },
-    {
-        "name": "Tocantins",
-        "initials": "to"
-    },
-    {
-        "name": "Distrito Federal",
-        "initials": "df"
-    }
-  ]
+  const states = {
+    "ac": "Acre",
+    "al": "Alagoas",
+    "ap": "Amapá",
+    "am": "Amazonas",
+    "ba": "Bahia",
+    "ce": "Ceará",
+    "df": "Distrito Federal",
+    "es": "Espírito Santo",
+    "go": "Goiás",
+    "ma": "Maranhão",
+    "mt": "Mato Grosso",
+    "ms": "Mato Grosso do Sul",
+    "mg": "Minas Gerais",
+    "pa": "Pará",
+    "pb": "Paraíba",
+    "pr": "Paraná",
+    "pe": "Pernambuco",
+    "pi": "Piauí",
+    "rj": "Rio de Janeiro",
+    "rn": "Rio Grande do Norte",
+    "rs": "Rio Grande do Sul",
+    "ro": "Rondônia",
+    "rr": "Roraima",
+    "sc": "Santa Catarina",
+    "sp": "São Paulo",
+    "se": "Sergipe",
+    "to": "Tocantins"
+  }
+  const initials = Object.keys(states);
 
-  for (let index = 0; index < states.length; index += 1) {
+  for (let index = 0; index < initials.length; index += 1) {
     const stateSelect = document.getElementById('state-selection');
-    const stateInfo = states[index];
     const option = document.createElement('option');
 
-    option.value = stateInfo.initials;
-    option.innerText = stateInfo.name;
+    option.value = initials[index];
+    option.innerText = states[initials[index]];
     stateSelect.appendChild(option);
   }
 }
