@@ -1,0 +1,65 @@
+form {
+  margin-bottom: 1rem;
+}
+
+form fieldset {
+  margin-bottom: 1rem;
+}
+
+form input , form select, form textarea {
+  display: block;
+}
+
+form input , form select , form textarea {
+  margin-bottom: 0.5rem;
+}
+
+form label {
+  display: inline-block;
+  margin-bottom: 0.2rem;
+}
+
+#address-type input , #address-type p {
+  display: inline;
+}
+
+textarea {
+  resize: none;
+}
+
+.required-marker {
+  color: red;
+}
+
+#submitted-form-data {
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  min-inline-size: min-content;
+  border-width: 2px;
+  border-style: groove;
+  border-color: threedface;
+  border-image: initial;
+}
+
+.entry-paragraph {
+  margin: 0.2rem;
+}
+
+.entry-name {
+  font-weight: 700;
+}
+
+.error-box {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: .75rem 1.25rem;
+  margin: 1rem 0;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+}
