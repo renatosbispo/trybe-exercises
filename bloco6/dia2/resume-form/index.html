@@ -12,66 +12,88 @@
   <title>Currículo</title>
 </head>
 <body>
-  <header>
-    <h1>Currículo</h1>
-  </header>
-  <form id="resume-form">
-    <fieldset id="personal-data">
-      <legend>Dados Pessoais</legend>
-      <!-- Name field -->
-      <label for="name">Nome:</label>
-      <input type="text" name="name" id="name" maxlength="40" required>
-      <!-- E-mail field -->
-      <label for="e-mail">E-mail:</label>
-      <input type="text" name="e-mail" id="e-mail" maxlength="50" required>
-      <div class="email-error-box error-box">
-        ERRO: insira um email válido, começando por letras ou números, seguido de @ e de um domínio válido! Clique nesta caixa para esconder este aviso.
+  <div class="container">
+    <div class="row py-2 py-sm-5">
+      <div class="col">
+        <header>
+          <h1>Currículo</h1>
+        </header>
+        <form id="resume-form">
+          <fieldset id="personal-data">
+            <legend>Dados Pessoais</legend>
+            <!-- Name field -->
+            <div class="mb-3">
+              <label for="name" class="form-label">Nome:</label>
+              <input type="text" name="name" id="name" maxlength="40" class="form-control" required>
+            </div>
+            <!-- E-mail field -->
+            <div class="mb-3">
+              <label for="e-mail" class="form-label">E-mail:</label>
+              <input type="text" name="e-mail" id="e-mail" maxlength="50" class="form-control" required>
+              <div class="email-error-box error-box">
+                ERRO: insira um email válido, começando por letras ou números, seguido de @ e de um domínio válido! Clique nesta caixa para esconder este aviso.
+              </div>
+            </div>
+            <!-- CPF field -->
+            <div class="mb-3">
+              <label for="cpf" class="form-label">CPF:</label>
+              <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="on" class="form-control" required>
+            </div>
+            <!-- Addres field -->
+            <div class="mb-3">
+              <label for="address" class="form-label">Endereço:</label>
+              <input type="text" name="address" id="address" maxlength="200" class="form-control" required>
+            </div>
+            <!-- City field -->
+            <div class="mb-3">
+              <label for="city" class="form-label">Cidade:</label>
+              <input type="text" name="city" id="city" maxlength="28" class="form-control" required>
+            </div>
+            <!-- State field -->
+            <div class="mb-3">
+              <label for="state-selection" class="form-label">Estado:</label>
+              <select name="state" id="state-selection" class="form-select" required>
+                <option value="">Selecione uma opção</option>
+                <!-- Options filled via JavaScript -->
+              </select>
+            </div>
+            <!-- Address type field -->
+            <div id="address-type">
+              <p class="form-check-label me-3">Tipo:<span class="required-marker">*</span></p>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="address-type" id="house" value="house" class="form-check-input" required>
+                <label for="house" class="form-check-label">Casa</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input type="radio" name="address-type" id="apartment" value="apartment" class="form-check-input">
+                <label for="apartment" class="form-check-label">Apartamento</label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset id="last-job">
+            <legend>Última Experiência</legend>
+            <!-- Summary field -->
+            <label for="resume-summary" class="form-label">Resumo:</label>
+            <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" class="form-control" required></textarea>
+            <!-- Job title field -->
+            <label for="job-title" class="form-label">Cargo:</label>
+            <input type="text" name="job-title" id="job-title" maxlength="40" class="form-control" required>
+            <!-- Job description field -->
+            <label for="job-description" class="form-label">Descrição do cargo:</label>
+            <input type="text" name="job-description" id="job-description" class="form-control" required>
+            <!-- Start date field -->
+            <label for="start-date" class="form-label">Data de início:</label>
+            <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" required>
+            <div class="data-error-box error-box">
+              ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
+            </div>
+          </fieldset>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="reset" id="clear-all" class="btn btn-outline-danger">Limpar tudo</button>
+        </form>
       </div>
-      <!-- CPF field -->
-      <label for="cpf">CPF:</label>
-      <input type="text" name="cpf" id="cpf" maxlength="14" autocomplete="on" required>
-      <!-- Addres field -->
-      <label for="address">Endereço:</label>
-      <input type="text" name="address" id="address" maxlength="200" required>
-      <!-- City field -->
-      <label for="city">Cidade:</label>
-      <input type="text" name="city" id="city" maxlength="28" required>
-      <!-- State field -->
-      <label for="state-selection">Estado:</label>
-      <select name="state" id="state-selection" required>
-        <option value="">--Selecione uma opção--</option>
-        <!-- Options filled via JavaScript -->
-      </select>
-      <!-- Address type field -->
-      <div id="address-type">
-        <p>Tipo:<span class="required-marker">*</span></p>
-        <input type="radio" name="address-type" id="house" value="house" required>
-        <label for="house">Casa</label>
-        <input type="radio" name="address-type" id="apartment" value="apartment">
-        <label for="apartment">Apartamento</label>
-      </div>
-    </fieldset>
-    <fieldset id="last-job">
-      <legend>Última Experiência</legend>
-      <!-- Summary field -->
-      <label for="resume-summary">Resumo:</label>
-      <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" required></textarea>
-      <!-- Job title field -->
-      <label for="job-title">Cargo:</label>
-      <input type="text" name="job-title" id="job-title" maxlength="40" required>
-      <!-- Job description field -->
-      <label for="job-description">Descrição do cargo:</label>
-      <input type="text" name="job-description" id="job-description" required>
-      <!-- Start date field -->
-      <label for="start-date">Data de início:</label>
-      <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" required>
-      <div class="data-error-box error-box">
-        ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
-      </div>
-    </fieldset>
-    <button type="reset" id="clear-all">Limpar tudo</button>
-    <button type="submit">Enviar</button>
-  </form>
+    </div>
+  </div>
   <script src="script.js"></script>
   <script>
       var picker = new Pikaday({
@@ -79,6 +101,6 @@
           format: 'DD/MM/YYYY',
       });
   </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 </body>
 </html>
