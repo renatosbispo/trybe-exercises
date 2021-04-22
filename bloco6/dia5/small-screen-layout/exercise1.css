@@ -27,12 +27,16 @@ figure {
 .figures-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 @media screen and (min-width: 521px) {
   body {
     background-color: #ECEFF4;
-    font-size: 1.2em;
+    font-size: 1.2rem;
+    padding-top: 0.25vw;
+    padding-bottom: 0.25vw;
   }
 
   figure {
@@ -45,5 +49,16 @@ figure {
 
   figure:nth-child(even) {
     padding-left: 1em;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  body {
+    background-color: rgb(229, 233, 240);
+    font-size: 1.25rem;
+    margin: 0 auto;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    max-width: 1024px;
   }
 }
