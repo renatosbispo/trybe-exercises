@@ -179,25 +179,6 @@ function formSubmitHandler(event) {
   event.preventDefault();
 }
 
-function formatStartDate(event) {
-  let currentValue = event.target.value;
-  const currentValueNumbersOnly = getNumbersFromString(currentValue);
-
-  if (event.inputType !== 'insertText') {
-    return;
-  }
-
-  if (!isNumber(event.data)) {
-    currentValue = currentValue.substring(0, currentValue.lastIndexOf(event.data));
-    event.target.value = currentValue;
-    return;
-  }
-
-  if (currentValueNumbersOnly.length === 2 || currentValueNumbersOnly.length === 4) {
-    event.target.value += '/';
-  }
-}
-
 function formatCpf(event) {
   let currentValue = event.target.value;
   const currentValueNumbersOnly = getNumbersFromString(currentValue);
@@ -226,7 +207,6 @@ window.onload = () => {
   dataErrorBox.style.display = 'none';
   emailErrorBox.style.display = 'none';
   cpfField.addEventListener('input', formatCpf);
-  startDateField.addEventListener('input', formatStartDate);
   resumeForm.addEventListener('submit', formSubmitHandler);
   clearAllButton.addEventListener('click', () => {
     const currentSubmittedDataBox = document.getElementById('submitted-form-data');
