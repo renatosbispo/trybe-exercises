@@ -70,17 +70,25 @@
           <fieldset id="last-job">
             <legend>Última Experiência</legend>
             <!-- Summary field -->
-            <label for="resume-summary" class="form-label">Resumo:</label>
-            <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" class="form-control" required></textarea>
+            <div class="mb-3">
+              <label for="resume-summary" class="form-label">Resumo:</label>
+              <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" class="form-control" required></textarea>
+            </div>
             <!-- Job title field -->
-            <label for="job-title" class="form-label">Cargo:</label>
-            <input type="text" name="job-title" id="job-title" maxlength="40" class="form-control" required>
+            <div class="mb-3">
+              <label for="job-title" class="form-label">Cargo:</label>
+              <input type="text" name="job-title" id="job-title" maxlength="40" class="form-control" required>
+            </div>
             <!-- Job description field -->
-            <label for="job-description" class="form-label">Descrição do cargo:</label>
-            <input type="text" name="job-description" id="job-description" class="form-control" required>
+            <div class="mb-3">
+              <label for="job-description" class="form-label">Descrição do cargo:</label>
+              <input type="text" name="job-description" id="job-description" class="form-control" required>
+            </div>
             <!-- Start date field -->
-            <label for="start-date" class="form-label">Data de início:</label>
-            <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" required>
+            <div class="mb-3">
+              <label for="start-date" class="form-label">Data de início:</label>
+              <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" required>
+            </div>
           </fieldset>
           <button type="submit" class="btn btn-primary">Enviar</button>
           <button type="reset" id="clear-all" class="btn btn-outline-danger">Limpar tudo</button>
