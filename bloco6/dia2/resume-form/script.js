@@ -1,6 +1,7 @@
 const resumeForm = document.getElementById('resume-form');
 const startDateField = document.getElementById('start-date');
 const lastJobFieldSet = document.getElementById('last-job');
+const requiredMessage = "Esse campo é obrigatório.";
 
 function markRequiredFieldLabels() {
   const inputLabels = document.getElementsByTagName('label');
@@ -136,15 +137,22 @@ new window.JustValidate('#resume-form', {
       email: true,
       maxLength: 50,
     },
+    cpf: {
+      required: true,
+      maxLength: 14,
+    },
   },
   messages: {
     name: {
-      required: "Esse campo é obrigatório.",
+      required: requiredMessage,
     },
     email: {
-      required: "Esse campo é obrigatório.",
-      email: "Insira um e-mail válido."
+      required: requiredMessage,
+      email: 'Insira um e-mail válido.'
     },
+    cpf: {
+      required: requiredMessage,
+    }
   },
   submitHandler: function (form, values, ajax) {
     const currentSubmittedDataBox = document.getElementById('submitted-form-data');
