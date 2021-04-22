@@ -1,3 +1,7 @@
+body {
+  background-color: rgb(236, 239, 244);
+}
+
 form {
   margin-bottom: 1rem;
 }
@@ -62,4 +66,8 @@ textarea {
   margin: 1rem 0;
   border: 1px solid transparent;
   border-radius: .25rem;
+}
+
+.js-validate-error-label {
+  display: inline-block;
 }

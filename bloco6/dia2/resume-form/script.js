@@ -130,17 +130,38 @@ new window.JustValidate('#resume-form', {
   rules: {
     name: {
       required: true,
-      maxLength: 40,
     },
     email: {
       required: true,
       email: true,
-      maxLength: 50,
     },
     cpf: {
       required: true,
-      maxLength: 14,
     },
+    address: {
+      required: true,
+    },
+    city: {
+      required: true,
+    },
+    state: {
+      required: true,
+    },
+    addressType: {
+      required: true,
+    },
+    summary: {
+      required: true,
+    },
+    jobTitle: {
+      required: true,
+    },
+    jobDescription: {
+      required: true,
+    },
+    startDate: {
+      required: true,
+    }
   },
   messages: {
     name: {
@@ -151,6 +172,30 @@ new window.JustValidate('#resume-form', {
       email: 'Insira um e-mail válido.'
     },
     cpf: {
+      required: requiredMessage,
+    },
+    address: {
+      required: requiredMessage,
+    },
+    city: {
+      required: requiredMessage,
+    },
+    state: {
+      required: requiredMessage,
+    },
+    addressType: {
+      required: requiredMessage,
+    },
+    summary: {
+      required: requiredMessage,
+    },
+    jobTitle: {
+      required: requiredMessage,
+    },
+    jobDescription: {
+      required: requiredMessage,
+    },
+    startDate: {
       required: requiredMessage,
     }
   },

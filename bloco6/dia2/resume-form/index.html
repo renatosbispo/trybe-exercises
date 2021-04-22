@@ -39,17 +39,17 @@
             <!-- Addres field -->
             <div class="mb-3">
               <label for="address" class="form-label">Endereço:</label>
-              <input type="text" name="address" id="address" maxlength="200" class="form-control" required>
+              <input type="text" name="address" id="address" maxlength="200" class="form-control" data-validate-field="address" required>
             </div>
             <!-- City field -->
             <div class="mb-3">
               <label for="city" class="form-label">Cidade:</label>
-              <input type="text" name="city" id="city" maxlength="28" class="form-control" required>
+              <input type="text" name="city" id="city" maxlength="28" class="form-control" data-validate-field="city" required>
             </div>
             <!-- State field -->
             <div class="mb-3">
               <label for="state-selection" class="form-label">Estado:</label>
-              <select name="state" id="state-selection" class="form-select" required>
+              <select name="state" id="state-selection" class="form-select" data-validate-field="state" required>
                 <option value="">Selecione uma opção</option>
                 <!-- Options filled via JavaScript -->
               </select>
@@ -58,12 +58,12 @@
             <div id="address-type">
               <p class="form-check-label me-3">Tipo:<span class="required-marker">*</span></p>
               <div class="form-check form-check-inline">
-                <input type="radio" name="address-type" id="house" value="house" class="form-check-input" required>
+                <input type="radio" name="address-type" id="house" value="house" class="form-check-input" data-validate-field="addressType" required>
                 <label for="house" class="form-check-label">Casa</label>
               </div>
               <div class="form-check form-check-inline">
-                <input type="radio" name="address-type" id="apartment" value="apartment" class="form-check-input">
-                <label for="apartment" class="form-check-label">Apartamento</label>
+                <input type="radio" name="address-type" id="apartment" value="apartment" class="form-check-input" data-validate-field="addressType" required>
+                <label for="apartment" class="form-check-label me-3">Apartamento</label>
               </div>
             </div>
           </fieldset>
@@ -72,22 +72,22 @@
             <!-- Summary field -->
             <div class="mb-3">
               <label for="resume-summary" class="form-label">Resumo:</label>
-              <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" class="form-control" required></textarea>
+              <textarea name="resume-summary" id="resume-summary" cols="65" rows="10" maxlength="1000" class="form-control" data-validate-field="summary" required></textarea>
             </div>
             <!-- Job title field -->
             <div class="mb-3">
               <label for="job-title" class="form-label">Cargo:</label>
-              <input type="text" name="job-title" id="job-title" maxlength="40" class="form-control" required>
+              <input type="text" name="job-title" id="job-title" maxlength="40" class="form-control" data-validate-field="jobTitle"  required>
             </div>
             <!-- Job description field -->
             <div class="mb-3">
               <label for="job-description" class="form-label">Descrição do cargo:</label>
-              <input type="text" name="job-description" id="job-description" class="form-control" required>
+              <input type="text" name="job-description" id="job-description" class="form-control" data-validate-field="jobDescription" maxlength="500" required>
             </div>
             <!-- Start date field -->
             <div class="mb-3">
               <label for="start-date" class="form-label">Data de início:</label>
-              <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" required>
+              <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" data-validate-field="startDate" required>
             </div>
           </fieldset>
           <button type="submit" class="btn btn-primary me-2">Enviar</button>
