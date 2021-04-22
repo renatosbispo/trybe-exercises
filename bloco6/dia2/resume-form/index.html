@@ -29,10 +29,7 @@
             <!-- E-mail field -->
             <div class="mb-3">
               <label for="e-mail" class="form-label">E-mail:</label>
-              <input type="text" name="e-mail" id="e-mail" maxlength="50" class="form-control" required>
-              <div class="email-error-box error-box">
-                ERRO: insira um email válido, começando por letras ou números, seguido de @ e de um domínio válido! Clique nesta caixa para esconder este aviso.
-              </div>
+              <input type="text" name="e-mail" id="e-mail" maxlength="50" class="form-control" data-validate-field="email" required>
             </div>
             <!-- CPF field -->
             <div class="mb-3">
@@ -84,9 +81,6 @@
             <!-- Start date field -->
             <label for="start-date" class="form-label">Data de início:</label>
             <input type="text" name="start-date" id="start-date" maxlength="10" autocomplete="off" class="form-control" required>
-            <div class="data-error-box error-box">
-              ERRO: insira uma data válida! Clique nesta caixa para esconder este aviso.
-            </div>
           </fieldset>
           <button type="submit" class="btn btn-primary">Enviar</button>
           <button type="reset" id="clear-all" class="btn btn-outline-danger">Limpar tudo</button>

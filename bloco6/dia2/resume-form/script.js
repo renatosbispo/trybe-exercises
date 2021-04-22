@@ -1,22 +1,6 @@
 const resumeForm = document.getElementById('resume-form');
 const startDateField = document.getElementById('start-date');
-const dataErrorBox = document.querySelector('.data-error-box');
-const emailErrorBox = document.querySelector('.email-error-box');
 const lastJobFieldSet = document.getElementById('last-job');
-
-new window.JustValidate('#resume-form', {
-  rules: {
-    name: {
-      required: true,
-      maxLength: 40,
-    },
-  },
-  messages: {
-    name: {
-      required: "Esse campo é obrigatório.",
-    },
-  }
-});
 
 function markRequiredFieldLabels() {
   const inputLabels = document.getElementsByTagName('label');
@@ -103,7 +87,8 @@ function createSubmittedDataBox(data) {
   dataBoxHeading.innerText = 'Dados Enviados';
   dataBoxHeading.classList.add('section-heading');
   submittedDataBox.appendChild(dataBoxHeading);
-  for (let [key, value] of data) {
+  for (let key of Object.keys(data)) {
+    let value = data[key];
     if (key === 'cpf') {
       value = value.replaceAll('.', '').replace('-', '');
     }
@@ -117,80 +102,6 @@ function createSubmittedDataBox(data) {
   // The folowing line was taken from:
   // https://stackoverflow.com/questions/270612/scroll-to-bottom-of-div#comment117187453_26293764
   document.body.scrollIntoView({ behavior: 'smooth', block: 'end' });
-}
-
-function isValidEmail(email) {
-  const emailRegex = /^\w*(\.\w+){0,}@\w+\.\w{2,}/
-
-  if (emailRegex.test(email)) {
-    return true;
-  }
-
-  return false;
-}
-
-function showEmailErrorBox() {
-  emailErrorBox.style.display = 'block';
-  emailErrorBox.addEventListener('click', () => {
-    emailErrorBox.style.display = 'none';
-  });
-  document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
-}
-
-function showDataErrorBox() {
-  dataErrorBox.style.display = 'block';
-  dataErrorBox.addEventListener('click', () => {
-    dataErrorBox.style.display = 'none';
-  });
-  lastJobFieldSet.scrollIntoView({ behavior: 'smooth', block: 'end' });
-}
-
-function isValidDate(date) {
-  let [day, month, year] = date.split('/');
-  day = parseInt(day);
-  month = parseInt(month);
-  year = parseInt(year);
-
-  if (day < 1 || month < 1 || year < 0) {
-    return false;
-  }
-
-  if (day > 31 || month > 12) {
-    return false;
-  }
-
-  return true;
-}
-
-function formSubmitHandler(event) {
-  const data = new FormData(resumeForm);
-  const currentSubmittedDataBox = document.getElementById('submitted-form-data');
-
-  if (!isValidDate(data.get('start-date'))) {
-    showDataErrorBox();
-    emailErrorBox.style.display = 'none';
-    event.preventDefault();
-
-    return;
-  }
-
-  if(!isValidEmail(data.get('e-mail'))) {
-    showEmailErrorBox();
-    dataErrorBox.style.display = 'none';
-    event.preventDefault();
-
-    return;
-  }
-
-
-
-  if (currentSubmittedDataBox) {
-    currentSubmittedDataBox.remove();
-  }
-  emailErrorBox.style.display = 'none';
-  dataErrorBox.style.display = 'none';
-  createSubmittedDataBox(data);
-  event.preventDefault();
 }
 
 function formatCpf(event) {
@@ -214,23 +125,51 @@ function formatCpf(event) {
   }
 }
 
-window.onload = () => {
-  const cpfField = document.getElementById('cpf');
-  const clearAllButton = document.getElementById('clear-all');
-
-  dataErrorBox.style.display = 'none';
-  emailErrorBox.style.display = 'none';
-  cpfField.addEventListener('input', formatCpf);
-  resumeForm.addEventListener('submit', formSubmitHandler);
-  clearAllButton.addEventListener('click', () => {
+new window.JustValidate('#resume-form', {
+  rules: {
+    name: {
+      required: true,
+      maxLength: 40,
+    },
+    email: {
+      required: true,
+      email: true,
+      maxLength: 50,
+    },
+  },
+  messages: {
+    name: {
+      required: "Esse campo é obrigatório.",
+    },
+    email: {
+      required: "Esse campo é obrigatório.",
+      email: "Insira um e-mail válido."
+    },
+  },
+  submitHandler: function (form, values, ajax) {
     const currentSubmittedDataBox = document.getElementById('submitted-form-data');
 
     if (currentSubmittedDataBox) {
       currentSubmittedDataBox.remove();
     }
 
-    dataErrorBox.style.display = 'none';
-    emailErrorBox.style.display = 'none';
+    createSubmittedDataBox(values);
+  },
+  focusWrongField: true,
+});
+
+window.onload = () => {
+  const cpfField = document.getElementById('cpf');
+  const clearAllButton = document.getElementById('clear-all');
+
+  cpfField.addEventListener('input', formatCpf);
+  //resumeForm.addEventListener('submit', formSubmitHandler);
+  clearAllButton.addEventListener('click', () => {
+    const currentSubmittedDataBox = document.getElementById('submitted-form-data');
+
+    if (currentSubmittedDataBox) {
+      currentSubmittedDataBox.remove();
+    }
 
     document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
