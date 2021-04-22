@@ -4,6 +4,20 @@ const dataErrorBox = document.querySelector('.data-error-box');
 const emailErrorBox = document.querySelector('.email-error-box');
 const lastJobFieldSet = document.getElementById('last-job');
 
+new window.JustValidate('#resume-form', {
+  rules: {
+    name: {
+      required: true,
+      maxLength: 40,
+    },
+  },
+  messages: {
+    name: {
+      required: "Esse campo é obrigatório.",
+    },
+  }
+});
+
 function markRequiredFieldLabels() {
   const inputLabels = document.getElementsByTagName('label');
 
