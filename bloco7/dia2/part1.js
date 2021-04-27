@@ -82,6 +82,16 @@ const getOrderItems = (order) => {
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
+  const orderItems = getOrderItems(order);
+  // Matches the last ocurrence of the separator ', ' used in the join() at the next line.
+  // Adapted from: https://frightanic.com/software-development/regex-match-last-occurrence/.
+  const regex = /,\s(?!.*,\s)/;
+  const formattedOrderItems = orderItems.join(', ').replace(regex, ' e ');
+
+  order.name = 'Renato Bispo';
+  order.payment.total = 50;
+
+  return `Olá ${order.name}, o total do seu pedido de ${formattedOrderItems} é R$ ${order.payment.total.toFixed(2)}.`;
 }
 
-orderModifier(order);
+console.log(orderModifier(order));
