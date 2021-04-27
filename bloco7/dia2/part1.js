@@ -46,11 +46,42 @@ const customerInfo = (order) => {
   return `Olá ${deliverTo}, entrega para: ${name}, tel. ${phone}, ${address1}, nº ${address2}, ap. ${address3}`;
 }
 
-console.log(customerInfo(order));
+const getItemTotal = (itemName) => {
+  const item = order.order[itemName];
+  let itemTotal = 0;
+
+  for(let subItem of Object.values(item)) {
+    itemTotal += subItem.amount * subItem.price;
+  }
+
+  return itemTotal;
+};
+
+const getOrderTotal = (order) => {
+  let orderTotal = 0;
+
+  for (let item of Object.keys(order.order)) {
+    if (item !== 'delivery') {
+      orderTotal += getItemTotal(item);
+    }
+  }
+
+  return orderTotal;
+};
+
+const getOrderItems = (order) => {
+  const orderItems = [];
+  const orderPizzas = order.order.pizza;
+  const orderDrinks = order.order.drinks;
+
+  orderItems.push(...Object.keys(orderPizzas));
+  orderItems.push(...Object.values(orderDrinks).map(drink => drink.type));
+
+  return orderItems;
+}
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
-
 }
 
 orderModifier(order);
