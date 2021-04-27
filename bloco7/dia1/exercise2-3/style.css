@@ -1,5 +1,7 @@
 body {
   font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .page-container {
@@ -14,12 +16,21 @@ body {
 
 .counter-container {
   display: flex;
+  flex-basis: 200px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 50px;
+  width: 200px;
+  padding: 40px 20px;
   background-color: rgb(245, 245, 246);
-  box-shadow: 2px 2px 5px rgba(220, 220, 220, 0.8);
+  box-shadow: 4px 4px 10px rgba(230, 230, 230, 0.8);
+}
+
+.counter-display {
+  font-size: 6em;
+  font-weight: 400;
+  font-family: Roboto Mono, monospace;
+  line-height: 1;
 }
 
 .counter-button {
