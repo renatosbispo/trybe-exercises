@@ -12,6 +12,16 @@ body {
   margin: 0 auto;
 }
 
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px;
+  background-color: rgb(245, 245, 246);
+  box-shadow: 2px 2px 5px rgba(220, 220, 220, 0.8);
+}
+
 .counter-button {
   border: none;
   border-radius: 3px;
