@@ -36,10 +36,17 @@ const order = {
 
 const customerInfo = (order) => {
   // Adicione abaixo as informações necessárias.
+  const deliverTo = order.order.delivery.deliveryPerson;
+  const name = order.name;
+  const phone = order.phoneNumber;
+  const address1 = order.address.street;
+  const address2 = order.address.number;
+  const address3 = order.address.apartment;
 
+  return `Olá ${deliverTo}, entrega para: ${name}, tel. ${phone}, ${address1}, nº ${address2}, ap. ${address3}`;
 }
 
-customerInfo(order);
+console.log(customerInfo(order));
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
