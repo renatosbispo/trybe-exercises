@@ -25,4 +25,6 @@ const tests = [
 ];
 
 tests.forEach(test => assert.strictEqual(sum(test.a, test.b), test.expected));
-assert.throws(() => sum(4, '5'), /^Error: parameters must be numbers$/);
+assert.throws(() => {
+  sum(4, '5');
+}, /^Error: parameters must be numbers$/);
