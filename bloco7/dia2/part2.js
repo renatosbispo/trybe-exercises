@@ -21,5 +21,11 @@ const lesson3 = {
 const addLessonInfo = (lesson, infoKey, infoValue) => {
   lesson[infoKey] = infoValue;
 };
+
+const printKeys = (object) => {
+  Object.keys(object).forEach(key => console.log(key));
+};
+
 addLessonInfo(lesson2, 'turno', 'manhã');
 console.log(lesson2);
+printKeys(lesson3);
