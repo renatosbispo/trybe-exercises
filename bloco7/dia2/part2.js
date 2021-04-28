@@ -26,13 +26,16 @@ addLessonInfo(lesson2, 'turno', 'manhã');
 console.log(lesson2);
 
 // Exercise 2
-const printKeys = (object) => {
-  Object.keys(object).forEach(key => console.log(key));
-};
-printKeys(lesson3);
+const listObjectKeys = object => Object.keys(object);
+console.log(listObjectKeys(lesson3));
 
 // Exercise 3
 const getObjectSize = (object) => {
   return Object.keys(object).length;
 };
 console.log(getObjectSize(lesson1));
+
+// Exercise 4
+const getObjectValues = object => Object.values(object);
+console.log(getObjectValues(lesson2));
+
