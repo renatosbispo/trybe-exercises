@@ -45,8 +45,12 @@ const getTotalStudents = (allLessons) => {
 
 // Exercise 7
 const getValueByIndex = (object, index) => {
-  const objectKeys = Object.keys(object);
   const requestedKey = Object.keys(object)[index];
 
   return requestedKey ? object[requestedKey] : null;
-}
+};
+
+// Exercuse 8
+const pairExists = (object, key, value) => {
+  return object[key] === value ? true : false;
+};
