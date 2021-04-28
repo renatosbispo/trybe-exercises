@@ -23,19 +23,18 @@ const addLessonInfo = (lesson, infoKey, infoValue) => {
   lesson[infoKey] = infoValue;
 };
 addLessonInfo(lesson2, 'turno', 'manhã');
-console.log(lesson2);
 
 // Exercise 2
 const listObjectKeys = object => Object.keys(object);
-console.log(listObjectKeys(lesson3));
 
 // Exercise 3
 const getObjectSize = (object) => {
   return Object.keys(object).length;
 };
-console.log(getObjectSize(lesson1));
 
 // Exercise 4
 const getObjectValues = object => Object.values(object);
-console.log(getObjectValues(lesson2));
+
+// Exercise 5
+const allLessons2 = Object.assign({}, { lesson1, lesson2, lesson3 });
 
