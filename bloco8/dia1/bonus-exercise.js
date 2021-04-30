@@ -31,3 +31,16 @@ const getDragonDamage = () => getRandomIntInclusive(15, dragon.strength);
 const getWarriorDamage = () => {
   return getRandomIntInclusive(warrior.strength, warrior.strength * warrior.weaponDmg);
 }
+const getMageInfo = () => {
+  let damage = 'Não possui mana suficiente';
+  let manaConsumed = 0;
+
+  if (mage.mana >= 15) {
+    damage = getRandomIntInclusive(mage.intelligence, mage.intelligence * 2);
+    manaConsumed = 15;
+  }
+
+  return { damage, manaConsumed };
+}
+
+console.log(getMageInfo());
