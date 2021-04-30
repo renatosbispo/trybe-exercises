@@ -52,6 +52,17 @@ const gameActions = {
     dragon.healthPoints -= warriorDamage;
     warrior.damage = warriorDamage;
   },
+  mageTurn: (mageInfoCallback) => {
+    const { mageDamage, manaConsumed } = mageInfoCallback();
+
+    if (manaConsumed) {
+      dragon.healthPoints -= mageDamage;
+      mage.damage = mageDamage;
+      mage.mana -= 15;
+    }
+
+    mage.damage = 0;
+  }
 };
 
 console.log(getMageInfo());
