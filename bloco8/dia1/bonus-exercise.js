@@ -28,4 +28,6 @@ const dragon = {
 const battleMembers = { mage, warrior, dragon };
 
 const getDragonDamage = () => getRandomIntInclusive(15, dragon.strength);
-
+const getWarriorDamage = () => {
+  return getRandomIntInclusive(warrior.strength, warrior.strength * warrior.weaponDmg);
+}
