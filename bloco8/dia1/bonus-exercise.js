@@ -28,9 +28,11 @@ const dragon = {
 const battleMembers = { mage, warrior, dragon };
 
 const getDragonDamage = () => getRandomIntInclusive(15, dragon.strength);
+
 const getWarriorDamage = () => {
   return getRandomIntInclusive(warrior.strength, warrior.strength * warrior.weaponDmg);
-}
+};
+
 const getMageInfo = () => {
   let damage = 'Não possui mana suficiente';
   let manaConsumed = 0;
@@ -41,6 +43,15 @@ const getMageInfo = () => {
   }
 
   return { damage, manaConsumed };
-}
+};
+
+const gameActions = {
+  warriorTurn: (warriorDamageCallback) => {
+    const warriorDamage = warriorDamageCallback();
+
+    dragon.healthPoints -= warriorDamage;
+    warrior.damage = warriorDamage;
+  },
+};
 
 console.log(getMageInfo());
