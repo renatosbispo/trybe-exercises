@@ -64,11 +64,8 @@ const books = [
 ];
 
 function smallerName() {
-  let nameBook;
-  // escreva aqui o seu código
-
-  // Variável nameBook que receberá o valor do menor nome;
-  return nameBook;
+  books.sort((a, b) => a.name.length - b.name.length);
+  return books[0].name;
 }
 
 assert.strictEqual(smallerName(), 'Duna');
