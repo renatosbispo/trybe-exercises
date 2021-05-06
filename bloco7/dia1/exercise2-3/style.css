@@ -1,0 +1,59 @@
+body {
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.counter-container {
+  display: flex;
+  flex-basis: 210px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 200px;
+  padding: 40px 20px;
+  background-color: rgb(245, 245, 246);
+  box-shadow: 4px 4px 10px rgba(230, 230, 230, 0.8);
+}
+
+.counter-display {
+  font-size: 5.8em;
+  font-weight: 400;
+  font-family: Roboto Mono, monospace;
+  line-height: 1;
+}
+
+.counter-button {
+  border: none;
+  border-radius: 3px;
+  padding: 10px 25px;
+  background-color: rgb(13, 110, 253);
+  color: white;
+  cursor: pointer;
+  box-shadow: 0px 0px 4px rgba(170, 170, 170, 0.8);
+  transition: background-color .2s ease-in-out, box-shadow .2s ease-in-out;
+  font-family: Roboto, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.counter-button:hover {
+  background-color: rgb(10, 88, 202);
+  box-shadow: 0px 0px 6px rgba(170, 170, 170, 0.8);
+}
+
+.counter-button:active {
+  box-shadow: inset 0px 0px 7px rgba(9, 79, 185, 0.8);
+}
