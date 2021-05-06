@@ -1,6 +1,6 @@
 const assert = require('assert');
 
-// escreva sum abaixo
+const sum = (...numbers) => numbers.length === 0 ? 0 : numbers.reduce((total, number) => total + number);
 
 assert.strictEqual(sum(), 0);
 assert.strictEqual(sum(1), 1);
