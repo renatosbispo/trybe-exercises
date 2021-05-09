@@ -10,4 +10,4 @@ const myPromise = new Promise((resolve, reject) => {
 myPromise
   .then(response => [2, 3, 5, 10].map((x) => response / x))
   .then(result => console.log(result))
-  .catch(error => console.log(error));
+  .catch(error => console.log(error, "\nÉ mais de oito mil! Essa promise deve estar quebrada!"));
