@@ -1,5 +1,8 @@
 const assert = require('assert');
-// escreva a função sumAllNumbers aqui
+
+function sumAllNumbers(numbers) {
+  return numbers.reduce((sum, x) => sum + x);
+}
 
 const numbers = [9, 23, 10, 3, 8];
 const expected = 53;
