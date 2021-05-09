@@ -1,5 +1,8 @@
 const assert = require('assert');
-// escreva a função findTheNeedle aqui
+
+function findTheNeedle(haystack, needle) {
+  return haystack.findIndex((el) => el === needle);
+}
 
 let words = ['house', 'train', 'slide', 'needle', 'book'];
 let expected = 3;
