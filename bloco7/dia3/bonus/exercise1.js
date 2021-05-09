@@ -6,7 +6,14 @@ function getChange(payable, paid) {
   const { length } = coins;
   let remaining = paid - payable;
 
-  // escreva seu código aqui...
+  if (remaining < 0) throw new Error('paid value is not enough');
+
+  coins.forEach((coin) => {
+    while (coin <= remaining)  {
+      remaining -= coin;
+      change.push(coin);
+    }
+  });
 
   return change;
 }
