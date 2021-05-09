@@ -34,15 +34,15 @@ const getWarriorDamage = () => {
 };
 
 const getMageInfo = () => {
-  let damage = 'Não possui mana suficiente';
+  let mageDamage = 'Não possui mana suficiente';
   let manaConsumed = 0;
 
   if (mage.mana >= 15) {
-    damage = getRandomIntInclusive(mage.intelligence, mage.intelligence * 2);
+    mageDamage = getRandomIntInclusive(mage.intelligence, mage.intelligence * 2);
     manaConsumed = 15;
   }
 
-  return { damage, manaConsumed };
+  return { mageDamage, manaConsumed };
 };
 
 const gameActions = {
@@ -59,10 +59,27 @@ const gameActions = {
       dragon.healthPoints -= mageDamage;
       mage.damage = mageDamage;
       mage.mana -= 15;
-    }
+    } else mage.damage = 0;
+  },
+  dragonTurn: (dragonDamageCallback) => {
+    const dragonDamage = dragonDamageCallback();
 
-    mage.damage = 0;
-  }
+    mage.healthPoints -= dragonDamage;
+    warrior.healthPoints -= dragonDamage;
+    dragon.damage = dragonDamage;
+  },
+  getTurnResults: (turn) => {
+    console.log(`[TURN ${turn}]`);
+    console.log(battleMembers);
+    console.log('===================================');
+  },
 };
 
-console.log(getMageInfo());
+
+gameActions.getTurnResults(0);
+
+gameActions.warriorTurn(getWarriorDamage);
+gameActions.mageTurn(getMageInfo);
+gameActions.dragonTurn(getDragonDamage);
+
+gameActions.getTurnResults(1);
