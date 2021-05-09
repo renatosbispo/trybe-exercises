@@ -83,4 +83,3 @@ gameActions.mageTurn(getMageInfo);
 gameActions.dragonTurn(getDragonDamage);
 
 gameActions.getTurnResults(1);
-  
