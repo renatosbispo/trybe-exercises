@@ -1,5 +1,8 @@
 const assert = require('assert');
-// escreva a função addOne aqui
+
+function addOne(numbers) {
+  return numbers.map((x) => x + 1);
+} 
 
 const myArray = [31, 57, 12, 5];
 const unchanged = [31, 57, 12, 5];
