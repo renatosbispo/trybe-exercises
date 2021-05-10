@@ -3,6 +3,10 @@ body {
   padding: 0;
 }
 
+h1, h2, h3 {
+  font-family: Merriweather, serif;
+}
+
 a {
   color: rgb(163, 190, 140);
   text-decoration: none;
@@ -47,6 +51,7 @@ a:hover {
   background-color: rgb(216, 222, 233);
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+  box-shadow: 2px 6px 10px 1px hsl(0, 0%, 90%);
 }
 
 .preferences-container .section-title {
@@ -55,14 +60,53 @@ a:hover {
 
 .preferences {
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   padding: 0;
+  margin: 0;
 }
 
 .preferences li {
-  display: inline-block;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
   color: rgb(59, 66, 82);
+  padding: 10px;
 }
 
-.preferences li:not(:last-child) {
-  margin-right:15px;
+.preferences li label {
+  margin-bottom: 5px;
+}
+
+.preferences li input {
+  max-width: 50px;
+  text-align: center;
+  padding: 2px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.reader {
+  background-color: white;
+  padding: 30px 35px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 2px 6px 10px 1px hsl(0, 0%, 90%);
+}
+
+.reader h3:first-child {
+  margin-top: 0;
 }
