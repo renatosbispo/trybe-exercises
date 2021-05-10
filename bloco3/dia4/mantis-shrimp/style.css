@@ -1,9 +1,21 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  margin-top: 0;
+}
+
 header {
   background-color: lightcoral;
 }
 
 nav {
   background-color: lightblue;
+  position: sticky;
+  top: 0;
 }
 
 main {
@@ -24,4 +36,26 @@ table {
 
 caption {
   caption-side: bottom;
+}
+
+.main-content {
+  display: inline-block;
+  width: 54%;
+  float: left;
+  padding: 20px;
+}
+
+.sidebar {
+  display: inline-block;
+  position: sticky;
+  top: 0;
+  width: 40%;
+  padding: 20px;
+  background-color: #6A5ACD;
+  height: 100%;
+  float: right;
+}
+
+.sidebar iframe {
+  max-width: 100%;
 }
