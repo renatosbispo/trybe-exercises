@@ -15,7 +15,7 @@ const handleError = (errorReason) => console.log(`Error getting temperature: ${e
 const sendMarsTemperature = (successCalback, failureCalback) => {
   setTimeout(() => {
     const temperature = getMarsTemperature();
-    const successful = Math.random() >= 0.5;
+    const successful = Math.random() >= 0.6;
 
     if (successful) successCalback(temperature);
     else failureCalback('Intense solar flares!');
