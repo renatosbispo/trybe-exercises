@@ -8,14 +8,33 @@ h1, h2 {
   margin-top: 0;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
 header {
   background-color: lightcoral;
+  text-align: center;
+  padding: 10px;
 }
 
 nav {
   background-color: lightblue;
-  position: sticky;
-  top: 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 10px 0;
+  list-style: none;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li:not( :last-child ) {
+  margin-right: 15px;
 }
 
 main {
@@ -39,7 +58,6 @@ caption {
 }
 
 .main-content {
-  display: inline-block;
   width: 54%;
   float: left;
   padding: 20px;
@@ -52,10 +70,16 @@ caption {
   width: 40%;
   padding: 20px;
   background-color: #6A5ACD;
-  height: 100%;
-  float: right;
 }
 
 .sidebar iframe {
   max-width: 100%;
+}
+
+footer {
+  clear: both;
+  background-color: lightcoral;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
 }
